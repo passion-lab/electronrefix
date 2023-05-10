@@ -20,7 +20,7 @@
     /* Others */
     --body-font-size: 14pt;
     --main-width-max: 1920px;
-    --image-top-margin: 20vh;
+    --image-top-margin: 15vh;
 }
 
 
@@ -42,7 +42,7 @@
 
 html, body {
     font-family: 'Rajdhani Regular', sans-serif;
-    /* font-size: var(--body-font-size); */
+    font-size: var(--body-font-size);
     color: var(--color-pri);
 }
 
@@ -72,12 +72,12 @@ main .main-content-area #image-content {
     display: flex;
     justify-content: center;
     float: right;
-    /* border: 1px solid green; */
+    border: 1px solid green;
 }
 
 main .main-content-area #image-content img {
     /* width: 60%; */
-    width: 50vw;
+    width: 60vw;
     min-width: 300px;
     position: relative;
 }
@@ -99,7 +99,7 @@ main .main-content-area #image-content #hologram-logo {
     }
 }
 
-main .main-content-area #text-content {
+main .main-content-area .text-content {
     position: absolute;
     width: 45%;
     bottom: 0;
@@ -107,15 +107,29 @@ main .main-content-area #text-content {
     /* border: 1px solid blueviolet; */
 }
 
-main .main-content-area #text-content #logo {
+main .main-content-area .text-content #logo {
     width: 22vw;
     min-width: 200px;
     margin-bottom: 1.5rem;
 }
 
-main .main-content-area #text-content h3 {
-    text-transform: capitalize;
+main .main-content-area .text-content h1 {
     font-family: 'Rajdhani Light', sans-serif;
     font-weight: 100;
+    font-size: 2.5rem;
+    margin-bottom: .2em;
 }
 
+main .main-content-area .text-content p {
+    margin-bottom: 1.5em;
+}
+
+main .main-content-area .text-content h5 {
+    text-transform: uppercase;
+    color: white;
+    opacity: .2;
+}
+
+main .main-content-area .text-content .countdown-line .digits {
+    color: white;
+}
