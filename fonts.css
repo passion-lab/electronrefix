@@ -1,0 +1,46 @@
+/* FONTS CONFIG FILE */
+/* ====================== */
+
+/* Rajdhani Font (fallback substitues: sans-serif) */
+
+@font-face {
+    font-display: swap;
+    font-family: 'Rajdhani Light';
+    font-style: normal;
+    font-weight: 300;
+    src: url('./Assets/Fonts/Rajdhani-Light.ttf');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Rajdhani Regular';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./Assets/Fonts/Rajdhani-Regular.ttf');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Rajdhani Medium';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./Assets/Fonts/Rajdhani-Medium.ttf');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Rajdhani SemiBold';
+    font-style: normal;
+    font-weight: 600;
+    src: url('./Assets/Fonts/Rajdhani-SemiBold.ttf');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Rajdhani Bold';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./Assets/Fonts/Rajdhani-Bold.ttf');
+}
+
+
