@@ -1,0 +1,121 @@
+/* IMPORTS */
+/* ==================== */
+
+@import url('./fonts.css');
+
+
+
+/* VARIABLES */
+/* ==================== */
+
+:root {
+    /* Colors */
+    --color-main-bg: #040404;
+    --color-pri: rgb(67, 208, 243);
+    
+    /* Images */
+    --img-faded-processor: url('./Assets/ComingSoonPage/faded_processor.png');
+    --img-logo-hologram: url('./Assets/ComingSoonPage/logo_hologram.png');
+
+    /* Others */
+    --body-font-size: 14pt;
+    --main-width-max: 1920px;
+    --image-top-margin: 20vh;
+}
+
+
+/* RESET */
+/* ==================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border-style: none;
+}
+
+
+/* DEFAULTS */
+/* ==================== */
+
+html, body {
+    font-family: 'Rajdhani Regular', sans-serif;
+    /* font-size: var(--body-font-size); */
+    color: var(--color-pri);
+}
+
+
+/* MAIN */
+/* ==================== */
+
+main {
+    height: 100vh;
+    width: 100%;
+    background: var(--color-main-bg);
+}
+
+main .main-content-area {
+    width: 85%;
+    height: 100%;
+    max-width: var(--main-width-max);
+    margin: 0 auto;
+    overflow: hidden;
+    /* border: 1px solid red; */
+}
+
+main .main-content-area #image-content {
+    width: 70%;
+    min-width: 300px;
+    margin-top: var(--image-top-margin);
+    display: flex;
+    justify-content: center;
+    float: right;
+    /* border: 1px solid green; */
+}
+
+main .main-content-area #image-content img {
+    /* width: 60%; */
+    width: 50vw;
+    min-width: 300px;
+    position: relative;
+}
+
+main .main-content-area #image-content #hologram-logo {
+    position: absolute;
+    top: 14px;
+    margin: var(--image-top-margin);
+    opacity: 1;
+    /* animation: hologramFlash 5s ease-in .5s infinite; */
+}
+
+@keyframes hologramFlash {
+    0%,2%,3%,5%,7%,10%,15%,17%,25%,45%,80%,95% {
+        opacity: 0;
+    }
+    1%,2.1%,4%,6%,8%,10.5%,14.9%,18%,24.5%,25.9%,35%,51%,72%,85%,96%,100% {
+        opacity: 1;
+    }
+}
+
+main .main-content-area #text-content {
+    position: absolute;
+    width: 45%;
+    bottom: 0;
+    padding-bottom: 10vh;
+    /* border: 1px solid blueviolet; */
+}
+
+main .main-content-area #text-content #logo {
+    width: 22vw;
+    min-width: 200px;
+    margin-bottom: 1.5rem;
+}
+
+main .main-content-area #text-content h3 {
+    text-transform: capitalize;
+    font-family: 'Rajdhani Light', sans-serif;
+    font-weight: 100;
+}
+
