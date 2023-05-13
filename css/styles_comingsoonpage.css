@@ -38,6 +38,7 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     border-style: none;
+    text-decoration: none;
 }
 
 
@@ -59,6 +60,51 @@ h1 {
 }
 
 
+
+/* LOADER */
+/* ==================== */
+
+#loader {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: .5s;
+}
+
+#loader > img {
+    width: 6%;
+}
+
+#loader img.logo-e {
+    width: 2%;
+}
+
+#loader img.logo-spine {
+    position: absolute;
+    transform: translateY(-5px);
+    animation: spine 1s ease-in-out .1s infinite alternate-reverse;
+}
+
+@keyframes spine {
+    0% {
+        transform: rotate(0deg) translateY(-5px) scale(1);
+        opacity: .3;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(360deg) translateY(-5px) scale(1.3);
+        opacity: .3;
+    }
+}
+
+
 /* MAIN */
 /* ==================== */
 
@@ -66,6 +112,7 @@ main {
     height: 100vh;
     width: 100%;
     background: var(--color-main-bg);
+    /* visibility: hidden; */
 }
 
 main .main-content-area {
@@ -227,26 +274,79 @@ main .main-content-area .text-content .left-section .countdown-line #progress-ba
 /* Right Section ______________________ */
 
 main .main-content-area .text-content .right-section {
-    display: flex;
-    opacity: .5;
+    /* border: 1px solid white; */
+    position: relative;
 }
 
 main .main-content-area .text-content .right-section .link-bar {
-    position: relative;
-    writing-mode: vertical-lr;
-    text-orientation: mixed;
-    transform: rotate(180deg);
+    position: absolute;
+    width: max-content;
+    bottom: 0;
+    left: 0;
+    /* text-orientation: mixed; */
+    /* writing-mode: vertical-lr; */
+    transform: rotate(-90deg);
+    transform-origin: bottom left;
     /* border: 1px solid blue; */
 }
 
-.link-bar::before {
-    content: '';
-    position: absolute;
-    width: 60px;
-    height: 1px;
-    top: -7%;
-    right: -65%;
-    transform: rotate(90deg);
-    background: #2db34a;
+.link-bar .heading {
+    position: relative;
+    text-transform: uppercase;
+    font-family: 'Rajdhani SemiBold', sans-serif;
+    color: var(--color-pri);
+    padding-right: .7em;
+    margin-right: .2em;
 }
 
+.link-bar a {
+    font-family: 'Rajdhani Regular', sans-serif;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.link-bar a:hover {
+    color: var(--color-pri);
+}
+
+.heading::before {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: calc(100% + 10vh);
+    left: -10vh;
+    background: linear-gradient(90deg, var(--color-logo-blue), var(--color-logo-green));
+    opacity: .4;
+    clip-path: polygon(0% 0%, 100% 0%, 94% 100%, 0% 100%);  /* Which point and how much to take down? */
+    z-index: -1;
+}
+
+
+/* ABOUT POPUP */
+/* ==================== */
+
+#about-popup {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    display: none;
+    visibility: hidden;
+}
+
+#about-popup .popup-window {
+    position: relative;
+    width: 50%;
+    height: 60%;
+    background: rgba(255, 255, 255, 0.05);
+    border-right: 2px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    /* border-radius: 8px; */
+    clip-path: polygon(5% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 10%);
+    /* backdrop-filter: blur(10px); */
+}

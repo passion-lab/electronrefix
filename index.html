@@ -1,18 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Configurations -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/styles_comingsoonpage.css">
+    
+    <!-- Basic Informations -->
     <title>electronREFIX - Coming Soon</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="./css/styles_comingsoonpage.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
 </head>
 <body>
 
+    <!-- Preloader -->
+    <div id="loader">
+        <img src="./Assets/ComingSoonPage/logo-e.png" alt="logo-e" class="logo-e">
+        <img src="./Assets/ComingSoonPage/logo-spine.png" alt="logo-spine" class="logo-spine">
+    </div>
+
+
     <main>
+        <div id="particles-js"></div>
+        
         <div class="main-content-area">
 
-            
+            <!-- Background images -->
             <div id="image-content">
                 <img id="faded-processor" src="./Assets/ComingSoonPage/f-processor.png" alt="Faded Processor">
                 <img id="hologram-logo" src="./Assets/ComingSoonPage/l-hologram.png" alt="Hologram Logo">
@@ -21,6 +42,7 @@
             <div class="text-content">
                 <section class="left-section">
                     
+                    <!-- Header - The Navigation Bar -->
                     <header>
                         <nav>
                             <button type="button" id="notify-btn">notify me</button>
@@ -54,13 +76,14 @@
                 <section class="right-section">
 
                     <div class="link-bar">
-                        <span class="heading">Find on</span>
-                        <a href="tel:+917595857541">CALL</a>
-                        <a href="mailto:techspace369@gmail.com">MAIL</a>
-                        <a href="http://api.whatsapp.com/">WA</a>
-                        <a href="http://telegram.com">TG</a>
-                        <a href="http://facebook.com/">FB</a>
-                        <a href="http://maps.google.com/">GM</a>
+                        <span class="heading">reach us</span>
+                        
+                        <a href="tel:+917595857541" title="Call us">CALL /</a>
+                        <a href="mailto:techspace369@gmail.com" title="Compose a mail">MAIL /</a>
+                        <a href="http://api.whatsapp.com/" title="'Hi' on WhatsApp">WA /</a>
+                        <a href="http://telegram.com" title="Message on Telegram">TG /</a>
+                        <a href="http://facebook.com/" title="Follow our Facebook Page">FB /</a>
+                        <a href="http://maps.google.com/" title="Find on Google Map">GM</a>
                     </div>
 
                 </section>
@@ -69,6 +92,19 @@
         </div>
         
     </main>
+
+    <!-- About eREFIX pop-up window -->
+    <div id="about-popup">
+        <div class="popup-window">
+
+        </div>
+    </div>
+
+    <!-- JavaScripts -->
+    <script src="./js/main_comingsoonpage.js"></script>
+    
+    <script src="./js/external/particles.js"></script>
+    <script src="./js/external/particles.min.js"></script>
 
 </body>
 </html>
