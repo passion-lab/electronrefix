@@ -60,7 +60,6 @@ h1 {
 }
 
 
-
 /* LOADER */
 /* ==================== */
 
@@ -125,22 +124,28 @@ main .main-content-area {
     /* border: 1px solid red; */
 }
 
-main .main-content-area #image-content {
+.main-content-area #image-content {
     position: relative;
     display: flex;
     justify-content: center;
     float: right;
-    margin-top: 10vh;
+    margin-top: var(--image-top-margin);
     /* border: 1px solid green; */
 }
 
-main .main-content-area #image-content img {
+@media screen and (max-width: 1024px) {
+    :root {
+        --image-top-margin: 25vh;
+    }
+}
+
+#image-content img {
     position: relative;
     width: 45vw;
     min-width: 300px;
 }
 
-main .main-content-area #image-content #hologram-logo {
+#image-content #hologram-logo {
     position: absolute;
     opacity: 1;
     /* animation: hologramFlash 3s ease-in .5s infinite; */
@@ -166,19 +171,26 @@ main .main-content-area .text-content {
     /* border: 1px solid blueviolet; */
 }
 
-main .main-content-area .text-content .left-section {
+.text-content .left-section {
     position: relative;
     height: 100%;
     width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* border: 1px solid red; */
+    border: 1px solid red;
+}
+
+
+@media screen and (max-width: 768) {
+    .text-content .left-section {
+        width: 80%;
+    }
 }
 
 /* Header > Navigation Bar ______________ */
 
-main .main-content-area .text-content .left-section header nav > * {
+.text-content .left-section header nav > * {
     display: inline-block;
     background: none;
     margin-right: .5em;
@@ -186,7 +198,7 @@ main .main-content-area .text-content .left-section header nav > * {
     /* border: 1px solid white; */
 }
 
-main .main-content-area .text-content .left-section header nav #notify-btn {
+.text-content .left-section header nav #notify-btn {
     text-transform: uppercase;
     font-family: 'Rajdhani SemiBold', sans-serif;
     font-size: 1rem;
@@ -197,25 +209,25 @@ main .main-content-area .text-content .left-section header nav #notify-btn {
     transition: all .2s;
 }
 
-main .main-content-area .text-content .left-section header nav #notify-btn:hover {
+.text-content .left-section header nav #notify-btn:hover {
     background: rgb(255, 0, 0, .2);
 }
 
-main .main-content-area .text-content .left-section header nav #notify-btn:active {
+.text-content .left-section header nav #notify-btn:active {
     background: rgb(255, 0, 0, .4);
     color: white;
 }
 
-main .main-content-area .text-content .left-section header nav #about-btn {
+.text-content .left-section header nav #about-btn {
     font-family: 'Rajdhani Regular', sans-serif;
     color: grey;
 }
 
-main .main-content-area .text-content .left-section header nav #about-btn:hover {
+.text-content .left-section header nav #about-btn:hover {
     cursor: pointer;
 }
 
-main .main-content-area .text-content .left-section header nav #about-btn:hover::after {
+.text-content .left-section header nav #about-btn:hover::after {
     content: ' eREFIX';
     color: rgb(26, 206, 122);
     cursor: pointer;
@@ -223,24 +235,24 @@ main .main-content-area .text-content .left-section header nav #about-btn:hover:
 
 /* Logo and Texts ______________ */
 
-main .main-content-area .text-content .left-section #logo {
+.text-content .left-section #logo {
     width: 22vw;
     min-width: 200px;
     margin-bottom: 1.5rem;
 }
 
-main .main-content-area .text-content .left-section h1 {
+.text-content .left-section h1 {
     font-family: 'Rajdhani Light', sans-serif;
     font-weight: 100;
     font-size: 2.5rem;
     margin-bottom: .2em;
 }
 
-main .main-content-area .text-content .left-section p {
+.text-content .left-section p {
     margin-bottom: 2em;
 }
 
-main .main-content-area .text-content .left-section h5 {
+.text-content .left-section h5 {
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.2);
     margin-bottom: .1em;
@@ -248,37 +260,37 @@ main .main-content-area .text-content .left-section h5 {
 
 /* Countdown Timer ______________ */
 
-main .main-content-area .text-content .left-section .countdown-line .digits {
+.text-content .left-section .countdown-line .digits {
     color: white;
 }
 
-main .main-content-area .text-content .left-section .countdown-line #progress-bar {
+.text-content .left-section .countdown-line #progress-bar {
     position: relative;
     width: 60%;
     height: 2px;
     background: rgba(255, 255, 255, 0.15);
 }
 
-main .main-content-area .text-content .left-section .countdown-line #progress-bar::after {
+.text-content .left-section .countdown-line #progress-bar::after {
     content: '';
     position: absolute;
-    width: 40%;
+    width: 10%;
     height: 100%;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 1), var(--color-pri));
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), var(--color-pri));
 }
 
 /* Right Section ______________________ */
 
-main .main-content-area .text-content .right-section {
-    /* border: 1px solid white; */
+.text-content .right-section {
+    border: 1px solid white;
     position: relative;
 }
 
-main .main-content-area .text-content .right-section .link-bar {
+.text-content .right-section .link-bar {
     position: absolute;
     width: max-content;
     bottom: 0;
