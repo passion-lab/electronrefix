@@ -1,7 +1,6 @@
 /* IMPORTS */
 /* ==================== */
 
-@import url('./fonts.css');
 
 
 
@@ -130,7 +129,7 @@ main .main-content-area {
     justify-content: center;
     float: right;
     margin-top: var(--image-top-margin);
-    /* border: 1px solid green; */
+    border: 1px solid green;
 }
 
 #image-content img {
@@ -172,7 +171,7 @@ main .main-content-area .text-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 /* Header > Navigation Bar ______________ */
@@ -273,7 +272,6 @@ main .main-content-area .text-content {
 /* Right Section ______________________ */
 
 .text-content .right-section {
-    border: 1px solid white;
     position: relative;
 }
 
@@ -356,16 +354,20 @@ main .main-content-area .text-content {
 /* MEDIA QUARIES */
 /* ============================= */
 
-@media screen and (max-width: 505px) {
+@media only screen and (max-width: 505px) {
     .main-content-area #image-content {
-        margin-top: 5vh;
+        margin-top: 10px;
     }
     .text-content .left-section h1 {
         font-size: 0.5rem;
     }
+    .text-content .left-section p {
+        display: none;
+        visibility: hidden;
+    }
 }
 
-@media screen and (max-width: 576px) {
+@media only screen and (max-width: 576px) and (min-width: 504px) {
     .main-content-area #image-content {
         margin-top: 20vh;
     }
@@ -375,12 +377,18 @@ main .main-content-area .text-content {
     .text-content .left-section h1 {
         font-size: 1.5rem;
     }
+    .text-content .left-section p {
+        font-size: 10px;
+    }
     .text-content .left-section .countdown-line .text-line {
         font-size: 1rem;
     }
 }
 
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) and (min-width: 575px) {
+    .main-content-area #image-content {
+        margin-top: 10px;
+    }
     .text-content .left-section h1 {
         font-size: 2.0rem;
     }
@@ -390,15 +398,14 @@ main .main-content-area .text-content {
     }
 }
 
-
-@media screen and (max-width: 847px) {
+@media only screen and (max-width: 847px) and (min-width: 767px) {
     .text-content .left-section {
         width: 80%;
     }
 }
 
-@media screen and (max-width: 1024px) {
-    :root {
-        --image-top-margin: 25vh;
+@media only screen and (max-width: 1024px) and (min-width: 846px) {
+    .main-content-area #image-content {
+        margin-top: 25vh;
     }
 }
