@@ -32,7 +32,7 @@
 
     const eCountdown = function () {
 
-        const finalDate = new Date(launchDate).getTime();
+        const finalDate = new Date(launchDate);
         const daysElement = document.getElementById('days');
         const hoursElement = document.getElementById('hours');
         const minutesElement = document.getElementById('minutes');
@@ -43,8 +43,9 @@
 
         function timer() {
 
-            const now = new Date().getTime();
-            let diff = finalDate - now;
+            const now = new Date();
+            let range = finalDate - now;
+            let diff = finalDate.getTime() - now.getTime();
 
             if (diff <= 0) {
                 if (timeInterval) {
@@ -53,6 +54,7 @@
                 return;
             };
 
+            // let percent = 100 * diff / range;
             let days = Math.floor(diff / (1000 * 60 * 60 * 24));
             let hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
             let minutes = Math.floor((diff / 1000 / 60) % 60);
@@ -74,6 +76,7 @@
             hoursElement.textContent = hours;
             minutesElement.textContent = minutes;
             secondsElement.textContent = seconds;
+            // console.log(percent);
 
         }
 
