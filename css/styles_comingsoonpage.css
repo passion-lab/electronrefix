@@ -81,22 +81,12 @@ h1 {
 }
 
 #loader img.logo-e {
-    /* width: 4%; */
-    animation: zooming .5s ease-in 0s infinite alternate-reverse;
+    transform: scale(.9);
 }
 
 #loader img.logo-spine {
     position: absolute;
     animation: spining 1s ease-in-out 0s infinite alternate-reverse;
-}
-
-@keyframes zooming {
-    0% {
-        transform: scale(.8);
-    }
-    100% {
-        transform: scale(1.2);
-    }
 }
 
 @keyframes spining {
@@ -118,10 +108,9 @@ h1 {
 /* ==================== */
 
 main {
+    position: relative;
     height: 100vh;
     width: 100%;
-    /* background: var(--color-main-bg); */
-    
     background-image: url('../Assets/ComingSoonPage/alexandre-debieve-FO7JIlwjOtU-unsplash.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -135,9 +124,15 @@ main::before {
     height: 100%;
     width: 100%;
     top: 0;
-    /* background: rgba(0, 0, 0, .9); */
     background: linear-gradient(to top left, var(--color-main-bg), rgba(0, 0, 0, .9), var(--color-main-bg));
+    mix-blend-mode: multiply;
     z-index: 0;
+}
+
+main #particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
 }
 
 main .main-content-area {
