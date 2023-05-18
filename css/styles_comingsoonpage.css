@@ -281,23 +281,36 @@ main .main-content-area .text-content {
     color: white;
 }
 
-.text-content .left-section .countdown-line #progress-bar {
+.text-content .left-section .countdown-line .text-line #progress-bar {
+    --progress-width: 0%;
     position: relative;
-    width: 60%;
+    width: 80%;
     height: 2px;
     background: rgba(255, 255, 255, 0.15);
 }
 
-.text-content .left-section .countdown-line #progress-bar::after {
+#progress-bar::after {
     content: '';
     position: absolute;
-    width: 10%;
+    width: var(--progress-width);
     height: 100%;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background: linear-gradient(to right, rgba(255, 255, 255, 1), var(--color-pri));
+}
+
+#progress-bar::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 10px;
+    left: var(--progress-width);
+    transform: translateX(-10px);
+    /* background: var(--color-pri); */
+    background: var(--color-pri);
+    box-shadow: 0 0 5px var(--color-pri), 0 0 10px var(--color-pri), 0 0 25px var(--color-pri), 0 0 40px var(--color-pri);
 }
 
 /* Right Section ______________________ */

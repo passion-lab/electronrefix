@@ -6,7 +6,8 @@
     // Variables
     // ----------------------------------
     
-    const launchDate = 'August 15, 2023 00:00:00';
+    const launchDate = 'August 15, 2023 00:00:00',
+    startDate = 'May 8, 2023 12:44:41';
 
 
 
@@ -32,33 +33,37 @@
 
     const eCountdown = function () {
 
-        const finalDate = new Date(launchDate);
+        const finalDate = new Date(launchDate).getTime();
+        const initialDate = new Date(startDate).getTime();
+
         const daysElement = document.getElementById('days');
         const hoursElement = document.getElementById('hours');
         const minutesElement = document.getElementById('minutes');
         const secondsElement = document.getElementById('seconds');
+        const progressElement = document.querySelector('#progress-bar');
+
         let timeInterval;
 
         if (!(daysElement && hoursElement && minutesElement && secondsElement)) return;
 
         function timer() {
 
-            const now = new Date();
-            let range = finalDate - now;
-            let diff = finalDate.getTime() - now.getTime();
+            const now = new Date().getTime();
+            let timeDiff = finalDate - now;
+            let timeRange = finalDate - initialDate;
+            let timePercent = 100 - (timeDiff / timeRange * 100)
 
-            if (diff <= 0) {
+            if (timeDiff <= 0) {
                 if (timeInterval) {
                     clearInterval(timeInterval);
                 };
                 return;
             };
 
-            // let percent = 100 * diff / range;
-            let days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            let hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-            let minutes = Math.floor((diff / 1000 / 60) % 60);
-            let seconds = Math.floor((diff / 1000) % 60);
+            let days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
+            let minutes = Math.floor((timeDiff / 1000 / 60) % 60);
+            let seconds = Math.floor((timeDiff / 1000) % 60);
 
             if (days <= 99) {
                 if (days <= 9) {
@@ -76,7 +81,7 @@
             hoursElement.textContent = hours;
             minutesElement.textContent = minutes;
             secondsElement.textContent = seconds;
-            // console.log(percent);
+            progressElement.style.setProperty('--progress-width', timePercent + '%');
 
         }
 
