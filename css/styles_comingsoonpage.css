@@ -310,7 +310,9 @@ main .main-content-area .text-content {
     transform: translateX(-10px);
     /* background: var(--color-pri); */
     background: var(--color-pri);
-    box-shadow: 0 0 5px var(--color-pri), 0 0 10px var(--color-pri), 0 0 25px var(--color-pri), 0 0 40px var(--color-pri);
+    box-shadow: 0 0 5px var(--color-pri), 0 0 10px var(--color-pri),
+                0 0 20px var(--color-pri), 0px 0 40px var(--color-pri),
+                0 0 60px var(--color-pri), 0px 0 80px var(--color-pri);
 }
 
 /* Right Section ______________________ */
