@@ -52,10 +52,25 @@ html, body {
 
 p {
     font-family: 'Rajdhani Regular', sans-serif;
+    margin-bottom: 2em;
 }
 
 h1 {
     font-family: 'Rajdhani Light', sans-serif;
+    font-weight: 100;
+    font-size: 2.5rem;
+    margin-bottom: .05em;
+}
+
+h5 {
+    text-transform: uppercase;
+    margin-bottom: .1em;
+}
+
+button {
+    font-family: 'Rajdhani SemiBold', sans-serif;
+    font-size: 1rem;
+    letter-spacing: .2em;
 }
 
 
@@ -216,9 +231,7 @@ main .main-content-area .text-content {
 
 .text-content .left-section header nav #notify-btn {
     text-transform: uppercase;
-    font-family: 'Rajdhani SemiBold', sans-serif;
-    font-size: 1rem;
-    letter-spacing: .2em;
+    /* letter-spacing: .2em; */
     color: red;
     border-left: 1px solid red;
     border-right: 1px solid red;
@@ -258,21 +271,8 @@ main .main-content-area .text-content {
     margin-bottom: 1.5rem;
 }
 
-.text-content .left-section h1 {
-    font-family: 'Rajdhani Light', sans-serif;
-    font-weight: 100;
-    font-size: 2.5rem;
-    margin-bottom: .05em;
-}
-
-.text-content .left-section p {
-    margin-bottom: 2em;
-}
-
 .text-content .left-section h5 {
-    text-transform: uppercase;
     color: rgba(255, 255, 255, 0.2);
-    margin-bottom: .1em;
 }
 
 /* Countdown Timer ______________ */
@@ -308,11 +308,10 @@ main .main-content-area .text-content {
     width: 10px;
     left: var(--progress-width);
     transform: translateX(-10px);
-    /* background: var(--color-pri); */
     background: var(--color-pri);
     box-shadow: 0 0 5px var(--color-pri), 0 0 10px var(--color-pri),
-                0 0 20px var(--color-pri), 0px 0 40px var(--color-pri),
-                0 0 60px var(--color-pri), 0px 0 80px var(--color-pri);
+                0 0 20px var(--color-pri), 0 0 40px var(--color-pri),
+                0 0 60px var(--color-pri), 0 0 80px var(--color-pri);
 }
 
 /* Right Section ______________________ */
@@ -378,23 +377,122 @@ main .main-content-area .text-content {
     justify-content: center;
     align-items: center;
 
-    display: none;
-    visibility: hidden;
+    /* display: none; */
+    visibility: visible;
 }
 
 #about-popup .popup-window {
     position: relative;
     width: 50%;
     height: 60%;
-    background: rgba(255, 255, 255, 0.05);
-    border-right: 2px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    /* border-radius: 8px; */
-    clip-path: polygon(5% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 10%);
-    /* backdrop-filter: blur(10px); */
+    background: linear-gradient(to bottom right, rgba(0, 50, 100, 0.8), 40%, transparent),
+                linear-gradient(to bottom, rgba(0, 5, 0, 0.5), 40%, transparent),
+                linear-gradient(to top left, rgba(80, 0, 80, 0.8), 30%, transparent),
+                url('../Assets/ComingSoonPage/pexels-mikhail-nilov-9242900.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* border-right: 2px solid rgba(255, 255, 255, 0.1); */
+    /* border-bottom: 2px solid rgba(255, 255, 255, 0.1); */
+    clip-path: polygon(25px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 25px);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: justify;
 }
 
+.popup-window .upper {
+    padding: 4em 3em 3em;
+    /* background: linear-gradient(to bottom, rgba(0, 0, 0, .9), 85%, transparent); */
+}
 
+.popup-window .upper p {
+    color: rgb(218, 218, 218);
+}
+
+.popup-window .upper button {
+    position: relative;
+    width: 140px;
+    height: 100%;
+    padding: .3em 1.2em;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    /* clip-path: polygon(0% 5px, 5px 0%, 100% 0%, 100% 100%, 0% 100%); */
+    transition: .3s all;
+}
+
+.upper button::before, .upper button::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 10px;
+    top: 0;
+    visibility: hidden;
+    z-index: -1;
+}
+
+.upper button::before {
+    right: -10px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.upper button::after {
+    right: -20px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.upper button:hover {
+    letter-spacing: normal;
+    border: 1px solid white;
+    color: var(--color-main-bg);
+    background: white;
+}
+
+.upper button:hover::before, .upper button:hover::after {
+    visibility: visible;
+}
+
+.upper .order .btns {
+    position: relative;
+}
+
+.btns #social-btns {
+    position: relative;
+}
+
+.btns #social-btns > a {
+    color: white;
+    padding: .3em .5em;
+    border: 1px solid var(--color-logo-yellow);
+}
+
+.popup-window .lower {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 3em;
+}
+
+.lower h5 {
+    cursor: pointer;
+}
+
+.popup-window .lower .logo {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.logo p {
+    margin: auto 1em;
+}
+
+.logo img {
+    width: 13vw;
+}
 
 
 /* MEDIA QUARIES */

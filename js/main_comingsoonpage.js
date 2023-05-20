@@ -7,7 +7,10 @@
     // ----------------------------------
     
     const launchDate = 'August 15, 2023 00:00:00',
-    startDate = 'May 8, 2023 12:44:41';
+    startDate = 'May 8, 2023 12:44:41',
+    refixItems = ['computer', 'laptop', 'printer', 'scanner', 'ups', 'cpu', 'monitor', 'motherboard', 'cctv'];
+
+    var isAboutPopup = false;
 
 
 
@@ -25,6 +28,14 @@
     
     };
 
+
+
+    // About Popup Window
+    const eAboutPopup = function () {
+        
+        // 
+
+    };
 
 
 
@@ -83,7 +94,7 @@
             secondsElement.textContent = seconds;
             progressElement.style.setProperty('--progress-width', timePercent + '%');
 
-        }
+        };
 
         timer();
         timeInterval = setInterval(timer, 1000);
