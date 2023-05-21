@@ -377,14 +377,14 @@ main .main-content-area .text-content {
     justify-content: center;
     align-items: center;
 
-    /* display: none; */
-    visibility: visible;
+    display: none;
+    visibility: hidden;
 }
 
 #about-popup .popup-window {
     position: relative;
-    width: 50%;
-    height: 60%;
+    width: 50vw;
+    height: 60vh;
     background: linear-gradient(to bottom right, rgba(0, 50, 100, 0.8), 40%, transparent),
                 linear-gradient(to bottom, rgba(0, 5, 0, 0.5), 40%, transparent),
                 linear-gradient(to top left, rgba(80, 0, 80, 0.8), 30%, transparent),
@@ -392,8 +392,6 @@ main .main-content-area .text-content {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    /* border-right: 2px solid rgba(255, 255, 255, 0.1); */
-    /* border-bottom: 2px solid rgba(255, 255, 255, 0.1); */
     clip-path: polygon(25px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 25px);
     border-radius: 5px;
     display: flex;
@@ -403,8 +401,7 @@ main .main-content-area .text-content {
 }
 
 .popup-window .upper {
-    padding: 4em 3em 3em;
-    /* background: linear-gradient(to bottom, rgba(0, 0, 0, .9), 85%, transparent); */
+    padding: 4em 3em 0em;
 }
 
 .popup-window .upper p {
@@ -416,6 +413,8 @@ main .main-content-area .text-content {
     width: 140px;
     height: 100%;
     padding: .3em 1.2em;
+    margin-bottom: .1em;
+    margin-right: .6em;
     background: transparent;
     border: 1px solid white;
     color: white;
@@ -457,16 +456,49 @@ main .main-content-area .text-content {
 
 .upper .order .btns {
     position: relative;
-}
-
-.btns #social-btns {
-    position: relative;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .btns #social-btns > a {
+    position: relative;
     color: white;
-    padding: .3em .5em;
-    border: 1px solid var(--color-logo-yellow);
+    width: auto;
+    padding: .3em .2em;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+    text-align: center;
+}
+
+#social-btns > a svg {
+    position: static;
+    margin: auto;
+    width: 25px;
+    transform: translateY(25%);
+}
+
+#social-btns > a svg path {
+    fill: rgba(255, 255, 255, 1);
+}
+
+#social-btns a.call:hover svg path {
+    fill: rgb(0, 17, 255);
+}
+#social-btns a.mail:hover svg path {
+    fill: rgb(255, 102, 0);
+}
+#social-btns a.whatsapp:hover svg path {
+    fill: rgb(0, 255, 8);
+}
+#social-btns a.telegram:hover svg path {
+    fill: rgb(0, 174, 255);
+}
+#social-btns a.facebook:hover svg path {
+    fill: rgb(0, 51, 255);
+}
+#social-btns a.map:hover svg path {
+    fill: rgb(255, 0, 93);
 }
 
 .popup-window .lower {
@@ -476,8 +508,29 @@ main .main-content-area .text-content {
     padding: 1em 3em;
 }
 
-.lower h5 {
+.lower .back {
+    position: relative;
+    display: flex;
     cursor: pointer;
+}
+
+.lower .back svg {
+    width: 20px;
+    transform: translateY(-1px);
+    display: none;
+}
+
+.lower .back svg path {
+    stroke: var(--color-pri);
+}
+
+.lower .back h5 {
+    position: relative;
+    cursor: pointer;
+}
+
+.lower .back:hover svg {
+    display: inline;
 }
 
 .popup-window .lower .logo {
@@ -492,6 +545,7 @@ main .main-content-area .text-content {
 
 .logo img {
     width: 13vw;
+    min-width: 80px;
 }
 
 
@@ -503,16 +557,18 @@ main .main-content-area .text-content {
     .main-content-area #image-content {
         margin-top: 10vh;
     }
+
+    #about-popup .popup-window {
+        width: 60vw;
+        height: 70vh;
+    }
 }
 
 @media only screen and (max-width: 847px) {
     .text-content .left-section {
         width: 70%;
     }
-    .main-content-area #image-content {
-        /* margin-top: 8vh; */
-    }
-    .text-content .left-section H1 {
+    .text-content .left-section h1 {
         font-size: 2.1rem;
     }
 }
@@ -524,9 +580,13 @@ main .main-content-area .text-content {
     .text-content .left-section h1 {
         font-size: 2.0rem;
     }
-    .text-content .left-section p {
+    p {
         font-size: 0.9rem;
         margin-bottom: 1.5em;
+    }
+
+    .popup-window .upper button {
+        margin-bottom: .2em;
     }
 }
 
@@ -545,11 +605,24 @@ main .main-content-area .text-content {
     .text-content .left-section h1 {
         font-size: 1.5rem;
     }
-    .text-content .left-section p {
+    p {
         font-size: 0.8rem;
     }
     .text-content .left-section .countdown-line .text-line {
         font-size: 1rem;
+    }
+
+    .popup-window .upper {
+        padding: 4em 2em 0em;
+    }
+    .popup-window .lower {
+        padding: 1em 2em;
+    }
+    #social-btns > a svg {
+        width: 20px;
+    }
+    .popup-window .upper button {
+        margin-bottom: .4em;
     }
 }
 
@@ -577,10 +650,10 @@ main .main-content-area .text-content {
     .text-content .left-section h1 {
         font-size: 1.2rem;
     }
-    .text-content .left-section p {
+    p {
         font-size: 0.65rem;
     }
-    .text-content .left-section h5 {
+    h5 {
         font-size: 0.6rem;
     }
     .text-content .left-section .countdown-line .text-line {
@@ -588,5 +661,21 @@ main .main-content-area .text-content {
     }
     .text-content .right-section .link-bar {
         font-size: 0.7rem;
+    }
+
+    #about-popup .popup-window {
+        width: 70vw;
+    }
+    .popup-window .upper {
+        padding: 4em 1.3em 0em;
+    }
+    .popup-window .lower {
+        padding: 1em 1.3em;
+    }
+    #social-btns > a svg {
+        width: 15px;
+    }
+    .lower .back svg {
+        width: 15px;
     }
 }

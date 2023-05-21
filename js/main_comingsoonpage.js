@@ -33,7 +33,12 @@
     // About Popup Window
     const eAboutPopup = function () {
         
-        // 
+        const refixBtn = document.getElementById('refix-btn'),
+        socialBtns = document.getElementById('social-btns');
+
+        refixBtn.addEventListener('click', () => {
+            socialBtns.style.visibility = 'visible';
+        });
 
     };
 
@@ -108,6 +113,7 @@
     (function eInit() {
 
         ePreloader();
+        eAboutPopup();
         eCountdown();
 
     })();
