@@ -549,6 +549,23 @@ main .main-content-area .text-content {
 }
 
 
+
+/* ABOUT POPUP */
+/* ==================== */
+
+.notify-popup-back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.notify-popup-back #notify-popup {
+    height: ;
+}
+
+
+
 /* MEDIA QUARIES */
 /* ============================= */
 
