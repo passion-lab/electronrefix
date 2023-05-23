@@ -78,7 +78,17 @@ button {
     font-family: 'Rajdhani SemiBold', sans-serif;
     font-size: 1rem;
     letter-spacing: .2em;
+    background: none;
+    outline: none;
 }
+
+input, 
+input:active {
+    border-style: none;
+    background: none;
+    outline: none;
+}
+
 
 
 /* LOADER */
@@ -597,10 +607,10 @@ main .main-content-area .text-content {
 
 .notify-popup h2 {
     position: absolute;
-    top: 27vh;
+    top: 14vw;
     color: rgb(44, 44, 44);
     text-align: right;
-    line-height: 1em;
+    line-height: .8em;
 }
 
 .notify-popup h2 span {
@@ -612,23 +622,29 @@ main .main-content-area .text-content {
     font-family: 'Rajdhani Regular', sans-serif;
     font-size: var(--body-font-size);
     color: var(--color-logo-yellow);
-    line-height: 2em;
+    line-height: 1.8em;
+    padding: 0 .5em;
 }
 
 .notify-popup h2 span h5::before {
     content: '';
     position: absolute;
     height: 1px;
-    width: 100%;
-    right: 0;
-    background: rgb(44, 44, 44);
+    width: 50%;
+    right: .5em;
+    background: linear-gradient(to left, var(--color-logo-yellow), transparent);
 }
 
 .notify-popup form {
     position: relative;
-    max-width: 500px;
-    margin-top: 6vw;
-    text-align: justify;
+    margin-top: 30vh;
+}
+
+.notify-popup form p {
+    text-align: center;
+    font-size: .8rem;
+    width: 45%;
+    margin: 3.5em auto;
 }
 
 .notify-popup form .entry-field {
@@ -636,17 +652,51 @@ main .main-content-area .text-content {
     display: flex;
 }
 
-.entry-field input {
-    background: none;
-    border-style: none;
+.entry-field {
+    padding: .2rem;
+    border-bottom: 1px solid grey;
+}
+
+.entry-field:hover {
     border-bottom: 1px solid white;
 }
 
-.entry-field input[type="reset"] {
-    color: rgb(44, 44, 44);
+.entry-field input[type="email"] {
+    width: inherit;
+    color: var(--color-pri);
+    font-family: 'Rajdhani Light', sans-serif;
+    font-weight: 100;
+    font-size: 2.5rem;
+    text-align: center;
+    font-style: italic;
 }
 
+.entry-field input[type="submit"] {
+    width: 100px;
+    font-family: 'Rajdhani Regular', sans-serif;
+    font-size: 1em;
+    padding: 0 .5em;
+    color: rgb(44, 44, 44);
+    cursor: pointer;
+}
 
+.entry-field input[type="submit"]:hover {
+    color: grey;
+}
+
+.notify-popup form button {
+    position: relative;
+    display: block;
+    width: 100px;
+    text-transform: uppercase;
+    color: rgb(44, 44, 44);
+    margin: 1.4em auto;
+    cursor: pointer;
+}
+
+.notify-popup form button:hover {
+    letter-spacing: normal;
+}
 
 
 /* MEDIA QUARIES */
