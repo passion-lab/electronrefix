@@ -7,8 +7,7 @@
     // ----------------------------------
     
     const launchDate = 'August 15, 2023 00:00:00',
-    startDate = 'May 8, 2023 12:44:41',
-    refixItems = ['computer', 'laptop', 'printer', 'scanner', 'ups', 'cpu', 'monitor', 'motherboard', 'cctv'];
+    startDate = 'May 8, 2023 12:44:41';
 
     var isAboutPopup = false;
 

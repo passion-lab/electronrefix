@@ -66,7 +66,6 @@ h2 {
     font-family: 'Rajdhani Bold', sans-serif;
     font-size: 6rem;
     text-transform: uppercase;
-    letter-spacing: 0em;
 }
 
 h5 {
@@ -394,8 +393,8 @@ main .main-content-area .text-content {
     justify-content: center;
     align-items: center;
 
-    display: none;
-    visibility: hidden;
+    /* display: none; */
+    visibility: visible;
 }
 
 #about-popup .popup-window {
@@ -576,7 +575,9 @@ main .main-content-area .text-content {
     height: 100vh;
     top: 0;
     background: rgba(0, 0, 0, .8);
-    /* display: flex; */
+    
+    display: none;
+    visibility: hidden;
 }
 
 #notify-popup-back .notify-popup {
@@ -590,7 +591,7 @@ main .main-content-area .text-content {
 .notify-popup img {
     position: absolute;
     width: 20vw;
-    top: 5vh;
+    top: 3vw;
     filter: drop-shadow(0 10px 10px black) drop-shadow(0 5px 30px rgba(0, 0, 0, 0.652));
     animation: upDown 2s ease-out 0s infinite alternate;
     z-index: 1;
@@ -648,8 +649,9 @@ main .main-content-area .text-content {
 }
 
 .notify-popup form .entry-field {
-    width: 100%;
+    width: 70vw;
     display: flex;
+    margin: 0 auto;
 }
 
 .entry-field {
@@ -704,10 +706,12 @@ main .main-content-area .text-content {
 
 
 @media only screen and (max-width: 1024px) {
+    /* Main Window */
     .main-content-area #image-content {
         margin-top: 10vh;
     }
 
+    /* About Window */
     #about-popup .popup-window {
         width: 60vw;
         height: 70vh;
@@ -715,15 +719,25 @@ main .main-content-area .text-content {
 }
 
 @media only screen and (max-width: 847px) {
+    /* Main Window */
     .text-content .left-section {
         width: 70%;
     }
     .text-content .left-section h1 {
         font-size: 2.1rem;
     }
+
+    /* Notify Me Window */
+    h2 {
+        font-size: 4.5rem;
+    }
+    .entry-field input[type="email"] {
+        font-size: 2rem;
+    }
 }
 
 @media only screen and (max-width: 768px) {
+    /* Main Window */
     .main-content-area #image-content {
         margin-top: 15vh;
     }
@@ -735,12 +749,25 @@ main .main-content-area .text-content {
         margin-bottom: 1.5em;
     }
 
+    /* About Window */
     .popup-window .upper button {
         margin-bottom: .2em;
+    }
+
+    /* Notify Me Window */
+    h2 {
+        font-size: 3.8rem;
+    }
+    .notify-popup h2 {
+        top: 17vw;
+    }
+    .entry-field input[type="email"] {
+        font-size: 1.5rem;
     }
 }
 
 @media only screen and (max-width: 576px) {
+    /* Main Window */
     main {
         background-image: none;
         background: var(--color-main-bg);
@@ -762,6 +789,7 @@ main .main-content-area .text-content {
         font-size: 1rem;
     }
 
+    /* About Window */
     .popup-window .upper {
         padding: 4em 2em 0em;
     }
@@ -774,9 +802,27 @@ main .main-content-area .text-content {
     .popup-window .upper button {
         margin-bottom: .4em;
     }
+
+    /* Notify Me Window */
+    .notify-popup h2 {
+        top: 18vw;
+    }
+    h2 {
+        font-size: 3.0rem;
+    }
+    .notify-popup h2 span h5 {
+        font-size: 11pt;
+    }
+    .entry-field input[type="email"] {
+        font-size: 1rem;
+    }
+    .entry-field input[type="submit"] {
+        font-size: .6rem;
+    }
 }
 
 @media only screen and (max-width: 505px) {
+    /* Main Window */
     main .main-content-area .text-content {
         padding-bottom: 5vh;
     }
@@ -813,6 +859,7 @@ main .main-content-area .text-content {
         font-size: 0.7rem;
     }
 
+    /* About Window */
     #about-popup .popup-window {
         width: 70vw;
     }
@@ -827,5 +874,31 @@ main .main-content-area .text-content {
     }
     .lower .back svg {
         width: 15px;
+    }
+
+    /* Notify Me Window */
+    .notify-popup h2 {
+        top: 20vw;
+    }
+    h2 {
+        font-size: 2.6rem;
+    }
+    .notify-popup h2 span h5 {
+        font-size: 9pt;
+    }
+    .notify-popup form p {
+        font-size: .6rem;
+    }
+    .notify-popup form .entry-field {
+        width: 85vw;
+    }
+    .entry-field input[type="email"] {
+        font-size: .9rem;
+    }
+    .entry-field input[type="submit"] {
+        font-size: .6rem;
+    }
+    button {
+        font-size: .7rem;
     }
 }
