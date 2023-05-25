@@ -37,6 +37,8 @@
         const aboutBtn = document.getElementById('about-btn'),
         aboutWindow = document.getElementById('about-popup'),
         exitBtn = document.getElementById('exit-about');
+        const refixBtn = document.getElementById('refix-btn'),
+        socialBtns = document.getElementById('social-btns');
         
         aboutBtn.addEventListener('click', () => {
             if (!isAboutPopup) {
@@ -50,20 +52,26 @@
                 aboutWindow.classList.remove('appear');
                 isAboutPopup = false;
             };
+            if (isSocialBtns) {
+                refixBtn.classList.remove('active');
+                isSocialBtns = false;
+                socialBtns.classList.remove('appear');
+            };
         });
 
 
         // Button activation
-        const refixBtn = document.getElementById('refix-btn'),
-        socialBtns = document.getElementById('social-btns');
+        
 
         refixBtn.addEventListener('click', () => {
             if (!isSocialBtns) {
                 socialBtns.classList.add('appear');
                 isSocialBtns = true;
+                refixBtn.classList.add('active');
             } else {
                 socialBtns.classList.remove('appear');
-                isSocialBtns = flase;
+                isSocialBtns = false;
+                refixBtn.classList.remove('active');
             };
         });
 

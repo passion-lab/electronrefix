@@ -11,6 +11,7 @@
     /* Colors */
     --color-main-bg: #040404;
     --color-pri: rgb(67, 208, 243);
+    --color-selected-bg: rgba(67, 208, 243, .2);
     --color-logo-green: #2db34a;
     --color-logo-blue: #005095;
     --color-logo-red: #ed1c24;
@@ -43,6 +44,10 @@
 
 /* DEFAULTS */
 /* ==================== */
+
+::selection {
+    background: var(--color-selected-bg);
+}
 
 html, body {
     font-family: 'Rajdhani Regular', sans-serif;
@@ -451,7 +456,8 @@ main .main-content-area .text-content {
     background: rgba(255, 255, 255, 0.1);
 }
 
-.upper button:hover {
+.upper button:hover,
+.upper button.active {
     letter-spacing: normal;
     border: 1px solid white;
     color: var(--color-main-bg);
@@ -460,6 +466,9 @@ main .main-content-area .text-content {
 
 .upper button:hover::before, .upper button:hover::after {
     visibility: visible;
+}
+.upper button.active::before, .upper button.active::after {
+    visibility: hidden;
 }
 
 .upper .order .btns {
