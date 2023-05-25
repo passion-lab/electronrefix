@@ -10,6 +10,7 @@
     startDate = 'May 8, 2023 12:44:41';
 
     var isAboutPopup = false;
+    var isSocialBtns = false;
 
 
 
@@ -31,12 +32,39 @@
 
     // About Popup Window
     const eAboutPopup = function () {
+
+        // Open and close window
+        const aboutBtn = document.getElementById('about-btn'),
+        aboutWindow = document.getElementById('about-popup'),
+        exitBtn = document.getElementById('exit-about');
         
+        aboutBtn.addEventListener('click', () => {
+            if (!isAboutPopup) {
+                aboutWindow.classList.add('appear');
+                isAboutPopup = true;
+            };
+        });
+
+        exitBtn.addEventListener('click', () => {
+            if (isAboutPopup) {
+                aboutWindow.classList.remove('appear');
+                isAboutPopup = false;
+            };
+        });
+
+
+        // Button activation
         const refixBtn = document.getElementById('refix-btn'),
         socialBtns = document.getElementById('social-btns');
 
         refixBtn.addEventListener('click', () => {
-            socialBtns.style.visibility = 'visible';
+            if (!isSocialBtns) {
+                socialBtns.classList.add('appear');
+                isSocialBtns = true;
+            } else {
+                socialBtns.classList.remove('appear');
+                isSocialBtns = flase;
+            };
         });
 
     };

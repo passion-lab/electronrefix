@@ -105,16 +105,6 @@ input:active {
     transition: .5s;
 }
 
-#loader > img {
-    width: 7vw;
-    max-width: 125px;
-    min-width: 40px;
-}
-
-#loader img.logo-e {
-    transform: scale(.9);
-}
-
 #loader img.logo-spine {
     position: absolute;
     animation: spining 1s ease-in-out 0s infinite alternate-reverse;
@@ -122,15 +112,13 @@ input:active {
 
 @keyframes spining {
     0% {
-        transform: rotate(0deg) scale(1);
-        opacity: .3;
+        transform: rotate(0deg);
     }
     50% {
         opacity: 1;
     }
     100% {
-        transform: rotate(360deg) scale(1.3);
-        opacity: .3;
+        transform: rotate(360deg);
     }
 }
 
@@ -393,7 +381,11 @@ main .main-content-area .text-content {
     justify-content: center;
     align-items: center;
 
-    /* display: none; */
+    display: none;
+    visibility: hidden;
+}
+#about-popup.appear {
+    display: flex;
     visibility: visible;
 }
 
@@ -474,6 +466,13 @@ main .main-content-area .text-content {
     position: relative;
     display: flex;
     flex-wrap: wrap;
+}
+
+.btns #social-btns {
+    visibility: hidden;
+}
+.btns #social-btns.appear {
+    visibility: visible;
 }
 
 .btns #social-btns > a {
