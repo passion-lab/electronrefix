@@ -1,0 +1,51 @@
+/* ======================================================== */
+/* INTERACTIVITY STYLESHEETS */
+/* invoked by the main_comingsoonpage.js file */
+/* ======================================================== */
+/* Inported to the style_comingsoonpage.css */
+/* -------------------------------------------------------- */
+
+
+/* (.appear = to make a hidden element appeared) */
+/* (.disappear = to make a visible element disappeared) */
+/* (.out = to make a disappearing animation) */
+
+#about-popup.appear {
+    display: flex;
+    visibility: visible;
+}
+#about-popup.appear .popup-window {
+    animation: fade-up-in .5s linear 0s 1;
+}
+
+.btns #social-btns.appear {
+    visibility: visible;
+}
+
+#notify-popup-back.appear {
+    display: block;
+    visibility: visible;
+}
+
+
+/* Animations */
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-up-in {
+    from {
+        opacity: 0;
+        transform: translateY(3vh);
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

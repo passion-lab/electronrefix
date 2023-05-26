@@ -1,6 +1,7 @@
 /* IMPORTS */
 /* ==================== */
 
+@import url('./jsinteractivity_comingsoonpage.css');
 
 
 
@@ -16,10 +17,6 @@
     --color-logo-blue: #005095;
     --color-logo-red: #ed1c24;
     --color-logo-yellow: #fff200;
-    
-    /* Images */
-    --img-faded-processor: url('./Assets/ComingSoonPage/faded_processor.png');
-    --img-logo-hologram: url('./Assets/ComingSoonPage/logo_hologram.png');
 
     /* Others */
     --body-font-size: 14pt;
@@ -385,14 +382,11 @@ main .main-content-area .text-content {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    /* part in jsinteractivity_comingsoonpage.css ... */
     display: none;
     visibility: hidden;
 }
-#about-popup.appear {
-    display: flex;
-    visibility: visible;
-}
+
 
 #about-popup .popup-window {
     position: relative;
@@ -478,10 +472,8 @@ main .main-content-area .text-content {
 }
 
 .btns #social-btns {
+    /* part in jsinteractivity_comingsoonpage.css ... */
     visibility: hidden;
-}
-.btns #social-btns.appear {
-    visibility: visible;
 }
 
 .btns #social-btns > a {
@@ -583,7 +575,7 @@ main .main-content-area .text-content {
     height: 100vh;
     top: 0;
     background: rgba(0, 0, 0, .8);
-    
+    /* part in jsinteractivity_comingsoonpage.css ... */
     display: none;
     visibility: hidden;
 }

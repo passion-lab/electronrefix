@@ -11,6 +11,7 @@
 
     var isAboutPopup = false;
     var isSocialBtns = false;
+    var isNotifyWindow = false;
 
 
 
@@ -31,17 +32,20 @@
 
 
     // About Popup Window
+    // ----------------------------------
+
     const eAboutPopup = function () {
 
-        // Open and close window
         const aboutBtn = document.getElementById('about-btn'),
         aboutWindow = document.getElementById('about-popup'),
         exitBtn = document.getElementById('exit-about');
         const refixBtn = document.getElementById('refix-btn'),
         socialBtns = document.getElementById('social-btns');
         
+        // Open and close window
         aboutBtn.addEventListener('click', () => {
             if (!isAboutPopup) {
+                // aboutWindow.classList.remove('out');
                 aboutWindow.classList.add('appear');
                 isAboutPopup = true;
             };
@@ -49,6 +53,7 @@
 
         exitBtn.addEventListener('click', () => {
             if (isAboutPopup) {
+                // aboutWindow.classList.add('out');
                 aboutWindow.classList.remove('appear');
                 isAboutPopup = false;
             };
@@ -59,10 +64,7 @@
             };
         });
 
-
         // Button activation
-        
-
         refixBtn.addEventListener('click', () => {
             if (!isSocialBtns) {
                 socialBtns.classList.add('appear');
@@ -72,6 +74,33 @@
                 socialBtns.classList.remove('appear');
                 isSocialBtns = false;
                 refixBtn.classList.remove('active');
+            };
+        });
+
+    };
+
+
+
+    // Notify Me Window
+    // ----------------------------------
+
+    const eNotifyMeWindow = function () {
+        
+        const notifyBtn = document.getElementById('notify-btn'),
+        notifyWindow = document.getElementById('notify-popup-back'),
+        exitNotify = document.getElementById('not-now');
+
+        notifyBtn.addEventListener('click', () => {
+            if (!isNotifyWindow) {
+                notifyWindow.classList.add('appear');
+                isNotifyWindow = true;
+            };
+        });
+
+        exitNotify.addEventListener('click', () => {
+            if (isNotifyWindow) {
+                notifyWindow.classList.remove('appear');
+                isNotifyWindow = false;
             };
         });
 
@@ -149,6 +178,7 @@
 
         ePreloader();
         eAboutPopup();
+        eNotifyMeWindow();
         eCountdown();
 
     })();
