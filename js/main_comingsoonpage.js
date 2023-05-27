@@ -12,6 +12,7 @@
     var isAboutPopup = false;
     var isSocialBtns = false;
     var isNotifyWindow = false;
+    var isSubscribed = false;
 
 
 
@@ -39,13 +40,17 @@
         const aboutBtn = document.getElementById('about-btn'),
         aboutWindow = document.getElementById('about-popup'),
         exitBtn = document.getElementById('exit-about');
+
         const refixBtn = document.getElementById('refix-btn'),
-        socialBtns = document.getElementById('social-btns');
+        socialBtns = document.getElementById('social-btns'),
+        allSocialBtns = document.querySelectorAll('#about-popup #social-btns a');
         
+
         // Open and close window
+
         aboutBtn.addEventListener('click', () => {
             if (!isAboutPopup) {
-                // aboutWindow.classList.remove('out');
+                aboutWindow.classList.remove('out');
                 aboutWindow.classList.add('appear');
                 isAboutPopup = true;
             };
@@ -53,7 +58,7 @@
 
         exitBtn.addEventListener('click', () => {
             if (isAboutPopup) {
-                // aboutWindow.classList.add('out');
+                aboutWindow.classList.add('out');
                 aboutWindow.classList.remove('appear');
                 isAboutPopup = false;
             };
@@ -64,17 +69,38 @@
             };
         });
 
+        window.addEventListener('click', function (e) {
+            if (e.target == aboutWindow) {
+                aboutWindow.classList.add('out');
+                aboutWindow.classList.remove('appear');
+                isAboutPopup = false;
+            };
+        })
+
+        
         // Button activation
+
         refixBtn.addEventListener('click', () => {
             if (!isSocialBtns) {
+                socialBtns.classList.remove('out')
                 socialBtns.classList.add('appear');
                 isSocialBtns = true;
                 refixBtn.classList.add('active');
             } else {
+                socialBtns.classList.add('out');
                 socialBtns.classList.remove('appear');
                 isSocialBtns = false;
                 refixBtn.classList.remove('active');
             };
+        });
+        
+        allSocialBtns.forEach(element => {
+            element.addEventListener('click', () => {
+                socialBtns.classList.add('out');
+                socialBtns.classList.remove('appear');
+                isSocialBtns = false;
+                refixBtn.classList.remove('active');
+            })
         });
 
     };
@@ -90,17 +116,24 @@
         notifyWindow = document.getElementById('notify-popup-back'),
         exitNotify = document.getElementById('not-now');
 
+        const mainContent = document.querySelector('#image-content .hologram-logo');
+
+
         notifyBtn.addEventListener('click', () => {
             if (!isNotifyWindow) {
+                notifyWindow.classList.remove('out');
                 notifyWindow.classList.add('appear');
                 isNotifyWindow = true;
+                isSubscribed === false ? mainContent.classList.add('no-animation') : none;
             };
         });
-
+        
         exitNotify.addEventListener('click', () => {
             if (isNotifyWindow) {
+                notifyWindow.classList.add('out');
                 notifyWindow.classList.remove('appear');
                 isNotifyWindow = false;
+                isSubscribed === false ? mainContent.classList.remove('no-animation') : none;
             };
         });
 

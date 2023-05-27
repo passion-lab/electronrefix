@@ -10,22 +10,47 @@
 /* (.disappear = to make a visible element disappeared) */
 /* (.out = to make a disappearing animation) */
 
-#about-popup.appear {
+#about-popup.appear,
+#about-popup.out {
     display: flex;
     visibility: visible;
+    animation: fade-in .5s linear 0s 1;
 }
 #about-popup.appear .popup-window {
-    animation: fade-up-in .5s linear 0s 1;
+    animation: fade-up-in .5s ease-in .5s 1 forwards;
+}
+#about-popup.out .popup-window {
+    animation: fade-up-out .5s ease-in 0s 1 forwards;
+}
+#about-popup.out {
+    animation: fade-out .5s linear .5s 1 forwards;
 }
 
-.btns #social-btns.appear {
+.btns #social-btns.appear,
+.btns #social-btns.out {
     visibility: visible;
+    animation: slide-right .5s ease-in-out 0s forwards;
+}
+.btns #social-btns.out {
+    animation: slide-left .5s ease-in-out 0s forwards;
 }
 
-#notify-popup-back.appear {
+
+
+#image-content .hologram-logo.no-animation {
+    animation: none;
+}
+#notify-popup-back.appear,
+#notify-popup-back.out {
     display: block;
     visibility: visible;
+    animation: xy-expand .5s ease-out 0s forwards;
 }
+#notify-popup-back.out {
+    animation: yx-contract .5s ease-in 0s forwards;
+}
+
+
 
 
 /* Animations */
@@ -39,6 +64,17 @@
     }
 }
 
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        display: none;
+        visibility: hidden;
+    }
+}
+
 @keyframes fade-up-in {
     from {
         opacity: 0;
@@ -47,5 +83,65 @@
     to {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+@keyframes fade-up-out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-3vh);
+        opacity: 0;
+    }
+}
+
+@keyframes slide-right {
+    from {
+        opacity: 0;
+        transform: translateX(-3vw);
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-left {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-3vw);
+        visibility: hidden;
+    }
+}
+
+@keyframes xy-expand {
+    0% {
+        transform: scaleY(0.05) scaleX(0);
+    }
+    50% {
+        transform: scaleY(0.05) scaleX(1);
+    }
+    100% {
+        transform: scaleY(1) scaleX(1);
+    }
+}
+
+@keyframes yx-contract {
+    0% {
+        transform: scaleY(1) scaleX(1);
+    }
+    50% {
+        transform: scaleY(0.05) scaleX(1);
+    }
+    100% {
+        transform: scaleY(0.05) scaleX(0);
+        display: none;
+        visibility: hidden;
     }
 }
