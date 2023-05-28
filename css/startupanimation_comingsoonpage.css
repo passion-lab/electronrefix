@@ -18,12 +18,11 @@ PAGE STARTUP ANIMATIONS
 } */
 
 body.loaded #loader {
-    animation: scaleUp 1s ease-in 0s 1 forwards;
+    animation: fadeOut 1s ease-in 0s 1 forwards;
 }
 
-@keyframes scaleUp {
+@keyframes fadeOut {
     to {
-        transform: scale(5);
         opacity: 0;
         visibility: hidden;
         display: none;
@@ -35,7 +34,7 @@ body.loaded #loader {
 /* Content */
 
 body.loaded main {
-    animation: scaleDown 1s ease-out 0s 1 forwards;
+    animation: fadeIn 1s ease-out 0s 1 forwards;
 }
 
 body.loaded main #particles-js {
