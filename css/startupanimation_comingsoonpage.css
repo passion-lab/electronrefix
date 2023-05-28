@@ -1,0 +1,143 @@
+/* 
+============================================
+PAGE STARTUP ANIMATIONS
+============================================
+*/
+
+
+
+/* Preloader */
+
+/* body.loaded > img {
+    opacity: 0;
+    visibility: hidden;
+    transition-property: opacity;
+    transition-duration: .5s;
+    transition-delay: 0s;
+    transition-timing-function: linear;
+} */
+
+body.loaded #loader {
+    animation: scaleUp 1s ease-in 0s 1 forwards;
+}
+
+@keyframes scaleUp {
+    to {
+        transform: scale(5);
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+    }
+}
+
+
+
+/* Content */
+
+body.loaded main {
+    animation: scaleDown 1s ease-out 0s 1 forwards;
+}
+
+body.loaded main #particles-js {
+    animation: fadeIn 1s linear .5s 1 forwards;
+}
+
+body.loaded #image-content .images {
+    animation: fadeIn 1s ease 1s 1 forwards;
+}
+
+body.loaded .text-content .left-section #logo {
+    animation: fadeIn 2s ease-out 1.5s 1 forwards;
+}
+
+body.loaded .text-content .left-section .title {
+    animation: slideDown 1s ease-in 2s 1 forwards;
+}
+
+body.loaded .text-content .left-section .description {
+    animation: slideDown 1s ease-out 2.5s 1 forwards;
+}
+
+body.loaded .text-content .left-section h5 {
+    animation: slideRight 1s ease-out 3s 1 forwards;
+}
+
+body.loaded .text-content .left-section .countdown-line {
+    animation: slideRight 1s ease-out 3.5s 1 forwards;
+}
+
+body.loaded .text-content .left-section header nav {
+    animation: slideDown 1s ease-in 4s 1 forwards;
+}
+
+body.loaded .right-section .link-bar {
+    animation: slideRightUp .5s ease 4.5s 1 forwards;
+}
+
+
+
+
+@keyframes scaleDown {
+    from {
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(1.5);
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes slideRight {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes slideRightUp {
+    from {
+        transform-origin: bottom left;
+        transform: rotate(-90deg) translateX(-20px);
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        transform-origin: bottom left;
+        transform: rotate(-90deg) translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+}

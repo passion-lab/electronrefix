@@ -1,6 +1,7 @@
 /* IMPORTS */
 /* ==================== */
 
+@import url('./startupanimation_comingsoonpage.css');
 @import url('./jsinteractivity_comingsoonpage.css');
 
 
@@ -47,9 +48,11 @@
 }
 
 html, body {
+    background: var(--color-main-bg);
     font-family: 'Rajdhani Regular', sans-serif;
     font-size: var(--body-font-size);
     color: var(--color-pri);
+    overflow: hidden;
 }
 
 p {
@@ -99,7 +102,7 @@ input:active {
     position: absolute;
     width: 100%;
     height: 100vh;
-    background: black;
+    background: var(--color-main-bg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,7 +139,6 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* visibility: hidden; */
 }
 
 main::before {
@@ -163,14 +165,12 @@ main .main-content-area {
     max-width: var(--main-width-max);
     margin: 0 auto;
     overflow: hidden;
-    /* border: 1px solid red; */
 }
 
 .main-content-area #image-content {
     position: relative;
     display: flex;
     justify-content: right;
-    /* align-items: center; */
 }
 
 .main-content-area .images {
@@ -178,8 +178,6 @@ main .main-content-area {
     display: flex;
     justify-content: center;
     margin-top: var(--image-top-margin);
-    /* float: right; */
-    /* border: 1px solid green; */
 }
 
 #image-content img {
@@ -213,7 +211,6 @@ main .main-content-area .text-content {
     padding-top: 2vh;
     display: flex;
     justify-content: space-between;
-    /* border: 1px solid blueviolet; */
 }
 
 .text-content .left-section {
@@ -223,7 +220,6 @@ main .main-content-area .text-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* border: 1px solid red; */
 }
 
 /* Header > Navigation Bar ______________ */
@@ -233,12 +229,10 @@ main .main-content-area .text-content {
     background: none;
     margin-right: .5em;
     padding: .1em 1em;
-    /* border: 1px solid white; */
 }
 
 .text-content .left-section header nav #notify-btn {
     text-transform: uppercase;
-    /* letter-spacing: .2em; */
     color: red;
     border-left: 1px solid red;
     border-right: 1px solid red;
@@ -332,11 +326,8 @@ main .main-content-area .text-content {
     width: max-content;
     bottom: 0;
     left: 0;
-    /* text-orientation: mixed; */
-    /* writing-mode: vertical-lr; */
     transform: rotate(-90deg);
     transform-origin: bottom left;
-    /* border: 1px solid blue; */
 }
 
 .link-bar .heading {
@@ -705,6 +696,27 @@ main .main-content-area .text-content {
 .notify-popup form button:hover {
     letter-spacing: normal;
 }
+
+
+
+/* FOR STARTUP ANIMATION */
+/* part in sartupanimation_comingsoonpage.css ... */
+
+
+main,
+main #particles-js,
+.main-content-area .images,
+.text-content .left-section #logo,
+.text-content .left-section .title,
+.text-content .left-section .description,
+.text-content .left-section h5,
+.text-content .left-section .countdown-line,
+.text-content .left-section header nav,
+.text-content .right-section .link-bar {
+    visibility: hidden;
+    opacity: 0;
+}
+
 
 
 /* MEDIA QUARIES */

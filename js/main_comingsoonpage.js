@@ -21,12 +21,16 @@
 
     const ePreloader = function () {
 
-        document.addEventListener("DOMContentLoaded", function () {
+        window.addEventListener("DOMContentLoaded", function () {
             setTimeout(() => {
-                console.log("Loaded");
-                document.getElementById('loader').style.visibility = 'hidden';
+                document.querySelector('body').classList.add('loaded');
             }, 1000);
         });
+
+        // window.addEventListener('load', () => {
+        //     console.log("OK");
+        //     document.querySelector('body').classList.add('loaded');
+        // });
     
     };
 
