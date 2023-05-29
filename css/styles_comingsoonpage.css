@@ -113,12 +113,17 @@ input:active {
 
 #preloader p {
     margin-top: 20px;
+    margin-bottom: 0;
     color: grey;
 }
 
 #preloader p span {
-    color: var(--color-pri);
+    color: white;
     text-transform: uppercase;
+}
+
+#preloader {
+    color: rgb(95, 95, 95);
 }
 
 #loader {
