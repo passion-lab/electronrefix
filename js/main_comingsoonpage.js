@@ -7,9 +7,8 @@
     // ----------------------------------
     
     const launchDate = 'August 15, 2023 00:00:00',
-    startDate = 'May 8, 2023 12:44:41';
-
-    const refixItems = ['computer', 'laptop', 'cctv', 'cpu', 'ups', 'vdu'];
+    startDate = 'May 8, 2023 12:44:41',
+    refixItems = ['computer', 'laptop', 'printer', 'cctv', 'cpu', 'ups', 'vdu'];
 
     var isAboutPopup = false;
     var isSocialBtns = false;
@@ -24,12 +23,12 @@
     const ePreloader = function () {
 
         const refixItemsElement = document.getElementById('refix-items');
-
-        // refixItems.forEach(item => {
-        //     setInterval(() => {
-                
-        //     })
-        // })
+       
+        let i = 0;
+        let loopedTexts = setInterval(() => {
+            refixItemsElement.textContent = refixItems[i];
+            i == refixItems.length - 1 ? i = 0 : i++;
+        }, 500);
 
         // window.addEventListener("DOMContentLoaded", function () {
         //     setTimeout(() => {
@@ -39,7 +38,13 @@
 
         window.addEventListener('load', () => {
             document.querySelector('body').classList.add('loaded');
+            clearInterval(loopedTexts);
         });
+
+        // window.addEventListener('loadstart', () => {
+        //     document.querySelector('body').classList.add('loaded');
+        //     clearInterval(loopedTexts);
+        // })
     
     };
 
@@ -85,13 +90,13 @@
         exitBtn.addEventListener('click', exitAboutWindow);
 
         window.addEventListener('click', (e) => {
-            e.target == aboutWindow ? exitAboutWindow() : none;
+            e.target == aboutWindow ? exitAboutWindow() : undefined;
         });
 
         // Exit on pressing ESC key
         window.addEventListener('keyup', (event) => {
             event = event || window.event;
-            event.keyCode == '27' ? exitAboutWindow() : none;
+            event.keyCode == '27' ? exitAboutWindow() : undefined;
         });
 
         
@@ -141,7 +146,7 @@
                 notifyWindow.classList.remove('out');
                 notifyWindow.classList.add('appear');
                 isNotifyWindow = true;
-                isSubscribed === false ? mainContent.classList.add('no-animation') : none;
+                isSubscribed === false ? mainContent.classList.add('no-animation') : undefined;
             };
         });
 
@@ -150,7 +155,7 @@
                 notifyWindow.classList.add('out');
                 notifyWindow.classList.remove('appear');
                 isNotifyWindow = false;
-                isSubscribed === false ? mainContent.classList.remove('no-animation') : none;
+                isSubscribed === false ? mainContent.classList.remove('no-animation') : undefined;
             };
         };
         
@@ -159,7 +164,7 @@
         // Exit on pressing ESC key
         window.addEventListener('keyup', (event) => {
             event = event || window.event;
-            event.keyCode == '27' ? exitNotifyWindow() : none;
+            event.keyCode == '27' ? exitNotifyWindow() : undefined;
         });
 
     };
