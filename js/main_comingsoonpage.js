@@ -9,6 +9,8 @@
     const launchDate = 'August 15, 2023 00:00:00',
     startDate = 'May 8, 2023 12:44:41';
 
+    const refixItems = ['computer', 'laptop', 'cctv', 'cpu', 'ups', 'vdu'];
+
     var isAboutPopup = false;
     var isSocialBtns = false;
     var isNotifyWindow = false;
@@ -20,6 +22,14 @@
     // ----------------------------------
 
     const ePreloader = function () {
+
+        const refixItemsElement = document.getElementById('refix-items');
+
+        // refixItems.forEach(item => {
+        //     setInterval(() => {
+                
+        //     })
+        // })
 
         // window.addEventListener("DOMContentLoaded", function () {
         //     setTimeout(() => {

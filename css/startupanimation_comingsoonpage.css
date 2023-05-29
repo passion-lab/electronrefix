@@ -17,7 +17,7 @@ PAGE STARTUP ANIMATIONS
     transition-timing-function: linear;
 } */
 
-body.loaded #loader {
+body.loaded #preloader {
     animation: fadeOut 1s ease-in 0s 1 forwards;
 }
 
