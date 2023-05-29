@@ -21,16 +21,15 @@
 
     const ePreloader = function () {
 
-        window.addEventListener("DOMContentLoaded", function () {
-            setTimeout(() => {
-                document.querySelector('body').classList.add('loaded');
-            }, 1000);
-        });
-
-        // window.addEventListener('load', () => {
-        //     console.log("OK");
-        //     document.querySelector('body').classList.add('loaded');
+        // window.addEventListener("DOMContentLoaded", function () {
+        //     setTimeout(() => {
+        //         document.querySelector('body').classList.add('loaded');
+        //     }, 1000);
         // });
+
+        window.addEventListener('load', () => {
+            document.querySelector('body').classList.add('loaded');
+        });
     
     };
 
@@ -59,8 +58,8 @@
                 isAboutPopup = true;
             };
         });
-
-        exitBtn.addEventListener('click', () => {
+        
+        function exitAboutWindow() {
             if (isAboutPopup) {
                 aboutWindow.classList.add('out');
                 aboutWindow.classList.remove('appear');
@@ -71,15 +70,19 @@
                 isSocialBtns = false;
                 socialBtns.classList.remove('appear');
             };
+        };
+
+        exitBtn.addEventListener('click', exitAboutWindow);
+
+        window.addEventListener('click', (e) => {
+            e.target == aboutWindow ? exitAboutWindow() : none;
         });
 
-        window.addEventListener('click', function (e) {
-            if (e.target == aboutWindow) {
-                aboutWindow.classList.add('out');
-                aboutWindow.classList.remove('appear');
-                isAboutPopup = false;
-            };
-        })
+        // Exit on pressing ESC key
+        window.addEventListener('keyup', (event) => {
+            event = event || window.event;
+            event.keyCode == '27' ? exitAboutWindow() : none;
+        });
 
         
         // Button activation
@@ -131,14 +134,22 @@
                 isSubscribed === false ? mainContent.classList.add('no-animation') : none;
             };
         });
-        
-        exitNotify.addEventListener('click', () => {
+
+        function exitNotifyWindow() {
             if (isNotifyWindow) {
                 notifyWindow.classList.add('out');
                 notifyWindow.classList.remove('appear');
                 isNotifyWindow = false;
                 isSubscribed === false ? mainContent.classList.remove('no-animation') : none;
             };
+        };
+        
+        exitNotify.addEventListener('click', exitNotifyWindow);
+
+        // Exit on pressing ESC key
+        window.addEventListener('keyup', (event) => {
+            event = event || window.event;
+            event.keyCode == '27' ? exitNotifyWindow() : none;
         });
 
     };
