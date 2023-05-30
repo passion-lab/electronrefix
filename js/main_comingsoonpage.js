@@ -21,12 +21,10 @@
     // ----------------------------------
 
     const ePreloader = function () {
-
-        const refixItemsElement = document.getElementById('refix-items');
        
         let i = 0;
         let loopedTexts = setInterval(() => {
-            refixItemsElement.textContent = refixItems[i];
+            document.getElementById('refix-items').textContent = refixItems[i];
             i == refixItems.length - 1 ? i = 0 : i++;
         }, 500);
 
