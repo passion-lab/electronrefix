@@ -539,7 +539,7 @@ main .main-content-area .text-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1em 3em;
+    padding: 0 3em 1em;
 }
 
 .lower .back {
@@ -756,6 +756,9 @@ main #particles-js,
         width: 60vw;
         height: 70vh;
     }
+    .popup-window .upper {
+        padding-top: 3em;
+    }
 }
 
 @media only screen and (max-width: 847px) {
@@ -765,6 +768,18 @@ main #particles-js,
     }
     .text-content .left-section h1 {
         font-size: 2.1rem;
+    }
+
+    /* About Window */
+    .popup-window .upper,
+    .popup-window .lower {
+        padding-left: 1.7em;
+        padding-right: 1.7em;
+    }
+    .popup-window .upper p {
+        line-height: 3.5vh;
+        font-size: .95rem;
+        margin-bottom: 2vh;
     }
 
     /* Notify Me Window */
@@ -790,6 +805,12 @@ main #particles-js,
     }
 
     /* About Window */
+    .popup-window .upper {
+        padding-top: 2em;
+    }
+    .popup-window .upper p {
+        font-size: .8rem;
+    }
     .popup-window .upper button {
         margin-bottom: .2em;
     }
@@ -830,11 +851,8 @@ main #particles-js,
     }
 
     /* About Window */
-    .popup-window .upper {
-        padding: 4em 2em 0em;
-    }
-    .popup-window .lower {
-        padding: 1em 2em;
+    .popup-window .upper p {
+        line-height: 3vh;
     }
     #social-btns > a svg {
         width: 20px;
@@ -903,8 +921,13 @@ main #particles-js,
     #about-popup .popup-window {
         width: 70vw;
     }
-    .popup-window .upper {
-        padding: 4em 1.3em 0em;
+    .popup-window .upper,
+    .popup-window .lower {
+        padding-left: 1.3em;
+        padding-right: 1.3em;
+    }
+    .popup-window .upper p {
+        line-height: 2.5vh;
     }
     .popup-window .lower {
         padding: 1em 1.3em;
