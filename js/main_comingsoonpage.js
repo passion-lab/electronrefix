@@ -1,4 +1,4 @@
-// JavaScript page for the  Coming Soon page
+// JavaScript page for the Coming Soon page
 
 
 (function (html) {
