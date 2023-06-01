@@ -424,11 +424,12 @@ main .main-content-area .text-content {
 }
 
 .popup-window .upper {
-    padding: 4em 3em 0em;
+    padding: 3.5em 3em 0em;
 }
 
 .popup-window .upper p {
     color: rgb(218, 218, 218);
+    line-height: 2.7vh;
 }
 
 .popup-window .upper button {
