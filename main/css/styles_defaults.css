@@ -1,0 +1,106 @@
+/* 
+====================
+IMPORTS
+====================
+*/
+
+
+
+/*
+====================
+VARIABLES
+====================
+*/
+
+:root {
+    /* Colors */
+    --color-main-bg: #040404;
+    --color-pri: rgb(67, 208, 243);
+    --color-selected-bg: rgba(67, 208, 243, .2);
+    --color-logo-green: #2db34a;
+    --color-logo-blue: #005095;
+    --color-logo-red: #ed1c24;
+    --color-logo-yellow: #fff200;
+
+    /* Others */
+    /* --body-font-size: 14pt;
+    --main-width-max: 1920px;
+    --image-top-margin: 15vh; */
+}
+
+
+
+/*
+====================
+RESET
+====================
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border-style: none;
+    text-decoration: none;
+}
+
+
+
+/*
+====================
+DEFAULTS
+====================
+*/
+
+::selection {
+    background: var(--color-selected-bg);
+}
+
+html, body {
+    background: var(--color-main-bg);
+    font-family: 'Rajdhani Regular', sans-serif;
+    font-size: var(--body-font-size);
+    color: var(--color-pri);
+    overflow: hidden;
+}
+
+p {
+    font-family: 'Rajdhani Regular', sans-serif;
+    margin-bottom: 2em;
+}
+
+h1 {
+    font-family: 'Rajdhani Light', sans-serif;
+    font-weight: 100;
+    font-size: 2.5rem;
+    margin-bottom: .05em;
+}
+
+h2 {
+    font-family: 'Rajdhani Bold', sans-serif;
+    font-size: 6rem;
+    text-transform: uppercase;
+}
+
+h5 {
+    text-transform: uppercase;
+    margin-bottom: .1em;
+}
+
+button {
+    font-family: 'Rajdhani SemiBold', sans-serif;
+    font-size: 1rem;
+    letter-spacing: .2em;
+    background: none;
+    outline: none;
+}
+
+input, 
+input:active {
+    border-style: none;
+    background: none;
+    outline: none;
+}
+
