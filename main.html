@@ -12,7 +12,7 @@
 
     <!-- Style Sheets -->
     <link rel="stylesheet" href="./fonts.css">
-    <link rel="stylesheet" href="./main/css/styles_main.css">
+    <link rel="stylesheet" href="./main/css/sass/styles_main.css">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
@@ -24,9 +24,28 @@
     <!-- Header -->
     <header>
 
-        <video muted autoplay loop></video>
+        <div class="background">
+            <video muted autoplay loop>
+                <source src="./main/assets/vid/blue_gradient.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="foreground">
+            <h1>Electron Refix</h1>
+        </div>
 
     </header>
+
+    <main>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod vel quae porro earum soluta voluptatem facilis accusantium harum est doloremque veritatis minus quidem provident sed, autem excepturi ut sit cum!
+    </main>
+
+
+
+    <!-- Instant JS -->
+    <script>
+        document.querySelector("header video").playbackRate = 0.5;
+    </script>
 
 </body>
 </html>
