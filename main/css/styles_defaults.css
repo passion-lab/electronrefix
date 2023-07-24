@@ -63,7 +63,7 @@ html, body {
     font-family: 'Rajdhani Regular', sans-serif;
     font-size: var(--body-font-size);
     color: var(--color-pri);
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 p {
