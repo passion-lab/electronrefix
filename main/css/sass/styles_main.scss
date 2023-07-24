@@ -1,0 +1,32 @@
+@import "variables";
+@import "commons";
+@import "defaults";
+
+
+
+// HEADER
+
+header {
+    position: relative;
+
+    .background {
+        @include fixed-cover;
+
+        video {
+            object-fit: cover;
+            mix-blend-mode: screen;
+            opacity: 0.1;
+            // filter: hue-rotate(0deg);
+        }
+    }
+
+    .foreground {
+        @include fixed-cover;
+        @include flex-center;
+    }
+}
+
+main {
+    position: relative;;
+    margin-top: 100vh;
+}

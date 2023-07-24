@@ -1,0 +1,51 @@
+// UNIVERSAL
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border-style: none;
+    text-decoration: none;
+}
+
+::selection {
+    background: $color-selected-bg;
+}
+
+
+
+// ROOT
+
+html {
+    font-family: 'Rajdhani Regular', sans-serif;
+    // 1rem = 10px (16px default) = 62.5%
+    font-size: 62.5%;
+}
+
+
+
+// ELEMENTS
+
+body {
+    background: $color-main-bg;
+    color: $color-pri;
+    overflow-x: hidden;
+}
+
+p {
+    @include text-para;
+}
+
+button {
+    background: none;
+    outline: none;
+}
+
+input,
+input:active {
+    border-style: none;
+    background: none;
+    outline: none;
+}

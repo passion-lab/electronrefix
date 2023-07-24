@@ -1,0 +1,40 @@
+// Texts
+
+@mixin text-para {
+    font-family: 'Rajdhani Regular', sans-serif;
+    font-size: 1.5rem;
+}
+
+@mixin text-regular-tiny {
+    font-family: 'Rajdhani Regular', sans-serif;
+    font-size: 1.2rem;
+}
+
+@mixin text-bold-upper-head {
+    font-family: 'Rajdhani Bold', sans-serif;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+@mixin text-italic($size) {
+    font-family: 'Rajdhani Regular', sans-serif;
+    font-size: $size;
+}
+
+
+
+// Display
+
+@mixin fixed-cover {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
