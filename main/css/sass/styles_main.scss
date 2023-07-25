@@ -4,13 +4,22 @@
 
 
 
+// ANIMATIONS
+
+@keyframes slight-updown {
+    from {transform: translateX(-50%) translateY(0);}
+    to {transform: translateX(-50%) translateY(10px);}
+}
+
+
+
 // HEADER
 
 header {
     position: relative;
 
     .background {
-        @include fixed-cover;
+        @include absolute-fixed-cover(fixed);
 
         video {
             object-fit: cover;
@@ -21,10 +30,27 @@ header {
     }
 
     .foreground {
-        @include fixed-cover;
+        @include absolute-fixed-cover(fixed, $top: 0vh);
         @include flex-center;
+        align-items: flex-start;
+
+        h1#headerTitle {
+            position: relative;
+            @include text-largest-bold;
+            @include gradient-text(to bottom, rgba(255, 255, 255, .1), transparent, $stop2: 70%);
+            
+            img#headerImg {
+                @include absolute-fixed-cover(absolute, $left: 50%, $top: 50%);
+                height: initial;
+                transform: translateX(-50%);
+                @include image_width;
+                animation: slight-updown 1s ease 0s infinite alternate;
+            }
+        }
     }
 }
+
+// MAIN
 
 main {
     position: relative;;

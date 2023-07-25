@@ -5,9 +5,16 @@
     font-size: 1.5rem;
 }
 
-@mixin text-regular-tiny {
+@mixin text-tiny-regular {
     font-family: 'Rajdhani Regular', sans-serif;
     font-size: 1.2rem;
+}
+
+@mixin text-largest-bold {
+    font-family: 'Rajdhani SemiBold', sans-serif;
+    // font-size: 28rem;
+    font-size: 20vw;
+    text-transform: uppercase;
 }
 
 @mixin text-bold-upper-head {
@@ -23,14 +30,41 @@
 
 
 
+// Text colors
+
+@mixin gradient-text($deg: 0deg, $color1, $color2, $stop1: 0%, $stop2: 100%) {
+    color: $color1;
+    background: linear-gradient($deg, $color1 $stop1, $color2 $stop2);
+    background: -webkit-linear-gradient($deg, $color1 $stop1, $color2 $stop2);
+    background: -moz-linear-gradient($deg, $color1 $stop1, $color2 $stop2);
+    background: -o-linear-gradient($deg, $color1 $stop1, $color2 $stop2);
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+// Images
+
+@mixin image_width {
+    min-width: 125px;
+    width: 35vw;
+    max-width: 700px;
+}
+
+
+
 // Display
 
-@mixin fixed-cover {
-    position: fixed;
+@mixin absolute-fixed-cover($pos: absolute, $top: 0, $left: 0) {
+    position: $pos;
     width: 100%;
     height: 100vh;
-    top: 0;
-    left: 0;
+    top: $top;
+    left: $left;
+
 }
 
 @mixin flex-center {
@@ -38,3 +72,6 @@
     align-items: center;
     justify-content: center;
 }
+
+
+// Animations
