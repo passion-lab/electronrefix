@@ -6,10 +6,7 @@
 
 // ANIMATIONS
 
-@keyframes slight-updown {
-    from {transform: translateX(-50%) translateY(0);}
-    to {transform: translateX(-50%) translateY(10px);}
-}
+
 
 
 
@@ -27,24 +24,102 @@ header {
             opacity: 0.1;
             // filter: hue-rotate(0deg);
         }
+
+        .background-logo {
+            @include absolute-bare($wd: 100%, $ht: 100%);
+            opacity: .2;
+            filter: invert(1);
+
+            &:nth-child(1) {
+                @include wh_tlbr($w: 50px, $h: 50px, $t: 8vh, $l: 4vw);
+            }
+
+            &:nth-child(2) {
+                @include wh_tlbr($w: 170px, $h: 170px, $t: 20vh, $r: 30vw);
+            }
+
+            &:nth-child(3) {
+                @include wh_tlbr($w: 40px, $h: 40px, $b: 20vh, $r: 200px);
+            }
+
+            &:nth-child(4) {
+                @include wh_tlbr($w: 500px, $h: 500px, $b: -100px, $l: 8vw);
+                filter: invert(1) blur(10px);
+            }
+
+            .logo-e {
+                position: relative;
+                height: 100%;
+                width: 100%;
+                background: url("../../assets/img/logo_e.png");
+                @include bg-img-cover-center;
+
+                .logo-spin {
+                    @include absolute-bare($wd: 100%, $ht: 100%, $lft: 2px, $top: 2px);
+                    background: url("../../assets/img/logo_spine.png");
+                    @include bg-img-cover-center;
+                    animation: spin 5s linear 0s infinite forwards;
+                }
+
+                @keyframes spin {
+                    to {
+                        transform: rotate(360deg);
+                    }
+                }
+            }
+        }
+    }
+
+    .foreground * {
+        border: 1px solid red;
     }
 
     .foreground {
+        // border: 1px solid red;
         @include absolute-fixed-cover(fixed, $top: 0vh);
         @include flex-center;
-        align-items: flex-start;
+        flex-direction: column;
+        justify-content: space-between;
 
         h1#headerTitle {
+            // border: 1px solid yellow;
+            // align-content: flex-start;
             position: relative;
             @include text-largest-bold;
             @include gradient-text(to bottom, rgba(255, 255, 255, .1), transparent, $stop2: 70%);
-            
+
             img#headerImg {
                 @include absolute-fixed-cover(absolute, $left: 50%, $top: 50%);
                 height: initial;
                 transform: translateX(-50%);
                 @include image_width;
-                animation: slight-updown 1s ease 0s infinite alternate;
+                // animation: header-img 2s ease-in-out 0s infinite alternate;
+            }
+
+            @keyframes header-img {
+                from {
+                    transform: translateX(-50%) translateY(0) scale(1);
+                }
+
+                to {
+                    transform: translateX(-50%) translateY(10px) scale(.95);
+                }
+            }
+        }
+
+        .headerElements {
+            display: flex;
+            @include flex-center;
+
+            h2.text {
+                @include text-larger-regular;
+            }
+
+            .buttons {
+                display: flex;
+                @include flex-center;
+                flex-direction: column;
+                justify-content: flex-start;
             }
         }
     }
@@ -53,6 +128,7 @@ header {
 // MAIN
 
 main {
-    position: relative;;
+    position: relative;
+    ;
     margin-top: 100vh;
 }

@@ -44,14 +44,6 @@ input:active {
   outline: none;
 }
 
-@keyframes slight-updown {
-  from {
-    transform: translateX(-50%) translateY(0);
-  }
-  to {
-    transform: translateX(-50%) translateY(10px);
-  }
-}
 header {
   position: relative;
 }
@@ -68,6 +60,77 @@ header .background video {
   mix-blend-mode: screen;
   opacity: 0.1;
 }
+header .background .background-logo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.2;
+  filter: invert(1);
+}
+header .background .background-logo:nth-child(1) {
+  width: 50px;
+  height: 50px;
+  top: 8vh;
+  left: 4vw;
+}
+header .background .background-logo:nth-child(2) {
+  width: 170px;
+  height: 170px;
+  top: 20vh;
+  left: auto;
+  right: 30vw;
+  left: auto;
+}
+header .background .background-logo:nth-child(3) {
+  width: 40px;
+  height: 40px;
+  top: auto;
+  left: auto;
+  bottom: 20vh;
+  top: auto;
+  right: 200px;
+  left: auto;
+}
+header .background .background-logo:nth-child(4) {
+  width: 500px;
+  height: 500px;
+  top: auto;
+  left: 8vw;
+  bottom: -100px;
+  top: auto;
+  filter: invert(1) blur(10px);
+}
+header .background .background-logo .logo-e {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: url("../../assets/img/logo_e.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+header .background .background-logo .logo-e .logo-spin {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 2px;
+  left: 2px;
+  background: url("../../assets/img/logo_spine.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  animation: spin 5s linear 0s infinite forwards;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+header .foreground * {
+  border: 1px solid red;
+}
 header .foreground {
   position: fixed;
   width: 100%;
@@ -77,7 +140,8 @@ header .foreground {
   display: flex;
   align-items: center;
   justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
 }
 header .foreground h1#headerTitle {
   position: relative;
@@ -103,7 +167,32 @@ header .foreground h1#headerTitle img#headerImg {
   min-width: 125px;
   width: 35vw;
   max-width: 700px;
-  animation: slight-updown 1s ease 0s infinite alternate;
+}
+@keyframes header-img {
+  from {
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+  to {
+    transform: translateX(-50%) translateY(10px) scale(0.95);
+  }
+}
+header .foreground .headerElements {
+  display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .foreground .headerElements h2.text {
+  font-family: "Rajdhani Regular", sans-serif;
+  font-size: 12vw;
+}
+header .foreground .headerElements .buttons {
+  display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 main {

@@ -17,6 +17,12 @@
     text-transform: uppercase;
 }
 
+@mixin text-larger-regular {
+    font-family: 'Rajdhani Regular', sans-serif;
+    // font-size: 28rem;
+    font-size: 12vw;
+}
+
 @mixin text-bold-upper-head {
     font-family: 'Rajdhani Bold', sans-serif;
     font-size: 1.8rem;
@@ -54,6 +60,12 @@
     max-width: 700px;
 }
 
+@mixin bg-img-cover-center {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
 
 
 // Display
@@ -64,6 +76,37 @@
     height: 100vh;
     top: $top;
     left: $left;
+}
+
+@mixin absolute-bare($wd, $ht, $top: 0, $lft: 0) {
+    position: absolute;
+    width: $wd;
+    height: $ht;
+    top: $top;
+    left: $lft;
+}
+
+@mixin wh_tlbr($w: 100%, $h: 100%, $t: auto, $l: auto, $b: auto, $r: auto) {
+    width: $w;
+    height: $h;
+
+    top: $t;
+    left: $l;
+
+    // @if $t != -1 {
+    //     top: $t;
+    // }
+    // @if $l != -1 {
+    //     left: $l;
+    // }
+    @if $b != auto {
+        bottom: $b;
+        top: auto;
+    }
+    @if ($r != auto) {
+        right: $r;
+        left: auto;
+    }
 
 }
 
