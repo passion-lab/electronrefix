@@ -94,6 +94,7 @@ header {
                 transform: translateX(-50%);
                 @include image_width;
                 // animation: header-img 2s ease-in-out 0s infinite alternate;
+                transition: all 1s;
             }
 
             @keyframes header-img {
