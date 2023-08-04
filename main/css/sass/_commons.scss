@@ -34,6 +34,16 @@
     font-size: $size;
 }
 
+@mixin text-btn-primary {
+    font-family: 'Rajdhani SemiBold', sans-serif;
+    font-size: 1.5vw;
+}
+
+@mixin text-btn-secondary {
+    font-family: 'Rajdhani Regular', sans-serif;
+    font-size: 1.5vw;
+}
+
 
 
 // Text colors

@@ -33,8 +33,14 @@ p {
 }
 
 button {
+  position: relative;
+  margin: 5px 0;
+  padding: 10px 30px;
   background: none;
   outline: none;
+  cursor: pointer;
+  text-align: center;
+  letter-spacing: initial;
 }
 
 input,
@@ -42,6 +48,23 @@ input:active {
   border-style: none;
   background: none;
   outline: none;
+}
+
+.btn-primary {
+  font-family: "Rajdhani SemiBold", sans-serif;
+  font-size: 1.5vw;
+  text-transform: uppercase;
+  color: #d9f4fc;
+  letter-spacing: 0.3vw;
+}
+.btn-primary:hover {
+  letter-spacing: 0.5vw;
+}
+
+.btn-secondary {
+  font-family: "Rajdhani Regular", sans-serif;
+  font-size: 1.5vw;
+  color: #83dcf6;
 }
 
 header {
@@ -121,15 +144,11 @@ header .background .background-logo .logo-e .logo-spin {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  animation: spin 5s linear 0s infinite forwards;
 }
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
-}
-header .foreground * {
-  border: 1px solid red;
 }
 header .foreground {
   position: fixed;
@@ -167,7 +186,6 @@ header .foreground h1#headerTitle img#headerImg {
   min-width: 125px;
   width: 35vw;
   max-width: 700px;
-  transition: all 1s;
 }
 @keyframes header-img {
   from {
@@ -187,13 +205,28 @@ header .foreground .headerElements h2.text {
   font-family: "Rajdhani Regular", sans-serif;
   font-size: 12vw;
 }
+header .foreground .headerElements .vSeperator {
+  margin: 0 2vw;
+  height: 90%;
+  width: 1px;
+  background: #2c6372;
+}
 header .foreground .headerElements .buttons {
   display: flex;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  justify-content: flex-start;
+  align-items: flex-start;
+}
+header .foreground .headerElements .buttons .btn-primary {
+  background-image: linear-gradient(to right, #314755 20%, #26a0da 50%, #314755 80%);
+  background-size: 200% auto;
+  transition: 0.5s;
+}
+header .foreground .headerElements .buttons .btn-primary:hover {
+  background-position: right center;
+  /* change the direction of the change here */
 }
 
 main {

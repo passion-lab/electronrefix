@@ -39,8 +39,14 @@ p {
 }
 
 button {
+    position: relative;
+    margin: 5px 0;
+    padding: 10px 30px;
     background: none;
     outline: none;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: initial;
 }
 
 input,
@@ -48,4 +54,24 @@ input:active {
     border-style: none;
     background: none;
     outline: none;
+}
+
+
+
+// CLASSES
+
+.btn-primary {
+    @include text-btn-primary;
+    text-transform: uppercase;
+    color: $color-primary-lightest;
+    letter-spacing: .3vw;
+
+    &:hover {
+        letter-spacing: .5vw;
+    }
+}
+
+.btn-secondary {
+    @include text-btn-secondary;
+    color: $color-primary-light;
 }

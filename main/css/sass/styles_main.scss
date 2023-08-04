@@ -58,7 +58,7 @@ header {
                     @include absolute-bare($wd: 100%, $ht: 100%, $lft: 2px, $top: 2px);
                     background: url("../../assets/img/logo_spine.png");
                     @include bg-img-cover-center;
-                    animation: spin 5s linear 0s infinite forwards;
+                    // animation: spin 5s linear 0s infinite forwards;
                 }
 
                 @keyframes spin {
@@ -71,7 +71,7 @@ header {
     }
 
     .foreground * {
-        border: 1px solid red;
+        // border: 1px solid red;
     }
 
     .foreground {
@@ -94,7 +94,6 @@ header {
                 transform: translateX(-50%);
                 @include image_width;
                 // animation: header-img 2s ease-in-out 0s infinite alternate;
-                transition: all 1s;
             }
 
             @keyframes header-img {
@@ -116,11 +115,34 @@ header {
                 @include text-larger-regular;
             }
 
+            .vSeperator {
+                margin: 0 2vw;
+                height: 90%;
+                width: 1px;
+                background: $color-primary-darker;
+            }
+
             .buttons {
                 display: flex;
                 @include flex-center;
                 flex-direction: column;
-                justify-content: flex-start;
+                align-items: flex-start;
+
+                button {
+                    // border: 1px solid yellow;
+                    // text-align: left;
+                }
+
+                .btn-primary {
+                    background-image: linear-gradient(to right, #314755 20%, #26a0da 50%, #314755 80%);
+                    background-size: 200% auto;
+                    transition: 0.5s;
+
+                    &:hover {
+                        background-position: right center;
+                        /* change the direction of the change here */
+                    }
+                }
             }
         }
     }
@@ -130,6 +152,5 @@ header {
 
 main {
     position: relative;
-    ;
     margin-top: 100vh;
 }
