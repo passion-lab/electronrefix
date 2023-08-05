@@ -134,9 +134,8 @@ header {
                 }
 
                 .btn-primary {
-                    background-image: linear-gradient(to right, #314755 20%, #26a0da 50%, #314755 80%);
+                    background-image: linear-gradient(to right, #314755 10%, #26a0da 50%, #314755 90%);
                     background-size: 200% auto;
-                    transition: 0.5s;
 
                     &:hover {
                         background-position: right center;

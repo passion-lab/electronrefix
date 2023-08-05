@@ -19,6 +19,7 @@
 html {
   font-family: "Rajdhani Regular", sans-serif;
   font-size: 62.5%;
+  cursor: url("../../assets/cursor/cursor_normal.png") 0 32, url("../../assets/cursor/cursor_normal.png") 0 32, auto;
 }
 
 body {
@@ -40,7 +41,6 @@ button {
   outline: none;
   cursor: pointer;
   text-align: center;
-  letter-spacing: initial;
 }
 
 input,
@@ -50,21 +50,64 @@ input:active {
   outline: none;
 }
 
+.link {
+  cursor: url("../../assets/cursor/cursor_link.png") 0 32, url("../../assets/cursor/cursor_link.cur") 0 32, auto;
+}
+
 .btn-primary {
+  position: relative;
   font-family: "Rajdhani SemiBold", sans-serif;
   font-size: 1.5vw;
   text-transform: uppercase;
   color: #d9f4fc;
   letter-spacing: 0.3vw;
+  transition: 0.5s;
+}
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  bottom: 5px;
+  height: 30%;
+  width: 0px;
+  background: rgb(17, 255, 17);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+  transition: 0.5s;
 }
 .btn-primary:hover {
   letter-spacing: 0.5vw;
 }
+.btn-primary:hover::after {
+  right: 5px;
+  width: 5px;
+  box-shadow: 0 0 5px rgb(0, 221, 0), 0 0 8px rgb(0, 221, 0), 0 0 20px rgb(0, 221, 0), 0 0 30px rgb(0, 221, 0), 0 0 40px rgb(0, 221, 0);
+}
 
 .btn-secondary {
+  text-align: left;
+  padding-left: 0;
   font-family: "Rajdhani Regular", sans-serif;
-  font-size: 1.5vw;
-  color: #83dcf6;
+  font-size: 1.4vw;
+  color: #3997b0;
+  border-bottom: 1px solid #3997b0;
+  transition: 0.5s;
+}
+.btn-secondary::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 0%;
+  bottom: 0;
+  left: 0;
+  background: #43d0f3;
+  box-shadow: 0 0 5px #43d0f3, 0 0 10px #43d0f3, 0 0 20px #43d0f3;
+  transition: 0.5s;
+}
+.btn-secondary:hover {
+  color: #43d0f3;
+}
+.btn-secondary:hover::before {
+  width: 100%;
 }
 
 header {
@@ -220,9 +263,8 @@ header .foreground .headerElements .buttons {
   align-items: flex-start;
 }
 header .foreground .headerElements .buttons .btn-primary {
-  background-image: linear-gradient(to right, #314755 20%, #26a0da 50%, #314755 80%);
+  background-image: linear-gradient(to right, #314755 10%, #26a0da 50%, #314755 90%);
   background-size: 200% auto;
-  transition: 0.5s;
 }
 header .foreground .headerElements .buttons .btn-primary:hover {
   background-position: right center;
