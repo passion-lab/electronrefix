@@ -6,6 +6,7 @@
   -moz-box-sizing: border-box;
   border-style: none;
   text-decoration: none;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::-moz-selection {
@@ -30,7 +31,9 @@ body {
 
 p {
   font-family: "Rajdhani Regular", sans-serif;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
+  text-align: justify;
+  margin-bottom: 5rem;
 }
 
 button {
@@ -39,7 +42,6 @@ button {
   padding: 10px 30px;
   background: none;
   outline: none;
-  cursor: pointer;
   text-align: center;
 }
 
@@ -50,7 +52,9 @@ input:active {
   outline: none;
 }
 
-.link {
+a,
+button,
+input {
   cursor: url("../../assets/cursor/cursor_link.png") 0 32, url("../../assets/cursor/cursor_link.cur") 0 32, auto;
 }
 
@@ -84,8 +88,6 @@ input:active {
 }
 
 .btn-secondary {
-  text-align: left;
-  padding-left: 0;
   font-family: "Rajdhani Regular", sans-serif;
   font-size: 1.4vw;
   color: #3997b0;
@@ -108,6 +110,27 @@ input:active {
 }
 .btn-secondary:hover::before {
   width: 100%;
+}
+
+.section-heading {
+  position: relative;
+}
+.section-heading h2.text-back {
+  font-family: "Rajdhani Bold", sans-serif;
+  font-size: 16rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.1);
+  -webkit-text-stroke: 1px rgba(217, 244, 252, 0.2);
+  color: transparent;
+}
+.section-heading h4.text-fore {
+  font-family: "Rajdhani Regular", sans-serif;
+  font-size: 7rem;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  right: 0;
+  top: 50%;
 }
 
 header {
@@ -244,9 +267,9 @@ header .foreground .headerElements {
   align-items: center;
   justify-content: center;
 }
-header .foreground .headerElements h2.text {
+header .foreground .headerElements h3.text {
   font-family: "Rajdhani Regular", sans-serif;
-  font-size: 12vw;
+  font-size: 8vw;
 }
 header .foreground .headerElements .vSeperator {
   margin: 0 2vw;
@@ -268,10 +291,44 @@ header .foreground .headerElements .buttons .btn-primary {
 }
 header .foreground .headerElements .buttons .btn-primary:hover {
   background-position: right center;
-  /* change the direction of the change here */
+}
+header .foreground .headerElements .buttons .btn-secondary {
+  text-align: left;
+  padding-left: 0;
+}
+
+.transition {
+  position: relative;
+  margin-top: 100vh;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(to top, #1c3239, transparent);
 }
 
 main {
   position: relative;
-  margin-top: 100vh;
+  background: #1c3239;
+  padding: 200px 10vw;
+}
+main .section-heading {
+  text-align: right;
+}
+main #services .section-body {
+  position: relative;
+}
+main #services .section-body .boxes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2vw;
+}
+main #services .section-body .boxes .box {
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main #services .section-body .boxes .box img {
+  width: 20rem;
 }/*# sourceMappingURL=styles_main.css.map */

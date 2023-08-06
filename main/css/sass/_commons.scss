@@ -2,7 +2,9 @@
 
 @mixin text-para {
     font-family: 'Rajdhani Regular', sans-serif;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+    text-align: justify;
+    margin-bottom: 5rem;
 }
 
 @mixin text-tiny-regular {
@@ -20,7 +22,7 @@
 @mixin text-larger-regular {
     font-family: 'Rajdhani Regular', sans-serif;
     // font-size: 28rem;
-    font-size: 12vw;
+    font-size: 8vw;
 }
 
 @mixin text-bold-upper-head {
@@ -29,10 +31,23 @@
     text-transform: uppercase;
 }
 
+@mixin text-section-back {
+    font-family: 'Rajdhani Bold', sans-serif;
+    font-size: 16rem;
+    text-transform: uppercase;
+}
+
+@mixin text-section-fore {
+    font-family: 'Rajdhani Regular', sans-serif;
+    font-size: 7rem;
+}
+
 @mixin text-italic($size) {
     font-family: 'Rajdhani Regular', sans-serif;
     font-size: $size;
 }
+
+
 
 @mixin text-btn-primary {
     font-family: 'Rajdhani SemiBold', sans-serif;
@@ -58,6 +73,12 @@
     -webkit-background-clip: text;
     text-fill-color: transparent;
     -webkit-text-fill-color: transparent;
+}
+
+@mixin outlined-text {
+    color: rgba(255, 255, 255, .1);
+    -webkit-text-stroke: 1px rgba($color: $color-primary-lightest, $alpha: .2);
+    color: transparent;
 }
 
 
@@ -103,17 +124,12 @@
     top: $t;
     left: $l;
 
-    // @if $t != -1 {
-    //     top: $t;
-    // }
-    // @if $l != -1 {
-    //     left: $l;
-    // }
-    @if $b != auto {
+    @if $b !=auto {
         bottom: $b;
         top: auto;
     }
-    @if ($r != auto) {
+
+    @if ($r !=auto) {
         right: $r;
         left: auto;
     }

@@ -8,6 +8,7 @@
     -moz-box-sizing: border-box;
     border-style: none;
     text-decoration: none;
+    -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
@@ -22,8 +23,8 @@ html {
     font-family: 'Rajdhani Regular', sans-serif;
     // 1rem = 10px (16px default) = 62.5%
     font-size: 62.5%;
-    cursor: url("../../assets/cursor/cursor_normal.png") 0 32, 
-    url("../../assets/cursor/cursor_normal.png") 0 32, auto;
+    cursor: url("../../assets/cursor/cursor_normal.png") 0 32,
+        url("../../assets/cursor/cursor_normal.png") 0 32, auto;
 }
 
 
@@ -46,7 +47,6 @@ button {
     padding: 10px 30px;
     background: none;
     outline: none;
-    cursor: pointer;
     text-align: center;
 }
 
@@ -57,14 +57,16 @@ input:active {
     outline: none;
 }
 
+a, 
+button, 
+input {
+    cursor: url("../../assets/cursor/cursor_link.png") 0 32,
+    url("../../assets/cursor/cursor_link.cur") 0 32, auto;
+}
+
 
 
 // CLASSES
-
-.link {
-    cursor: url("../../assets/cursor/cursor_link.png") 0 32,
-        url("../../assets/cursor/cursor_link.cur") 0 32, auto;
-}
 
 .btn-primary {
     position: relative;
@@ -102,8 +104,6 @@ input:active {
 }
 
 .btn-secondary {
-    text-align: left;
-    padding-left: 0;
     @include text-btn-secondary;
     color: $color-primary-dark;
     border-bottom: 1px solid $color-primary-dark;
@@ -129,5 +129,24 @@ input:active {
         &::before {
             width: 100%;
         }
+    }
+}
+
+
+.section-heading {
+    position: relative;
+
+    h2.text-back {
+        @include text-section-back;
+        @include outlined-text;
+    }
+
+    h4.text-fore {
+        @include text-section-fore;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        right: 0;
+        top: 50%;
     }
 }
