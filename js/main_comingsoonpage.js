@@ -6,7 +6,7 @@
     // Variables
     // ----------------------------------
     
-    const launchDate = 'August 15, 2023 00:00:00',
+    const launchDate = 'September 1, 2023 00:00:00',
     startDate = 'May 8, 2023 12:44:41',
     refixItems = ['computer', 'laptop', 'printer', 'cctv', 'cpu', 'ups', 'vdu'];
 
