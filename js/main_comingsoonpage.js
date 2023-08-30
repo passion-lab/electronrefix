@@ -6,7 +6,7 @@
     // Variables
     // ----------------------------------
     
-    const launchDate = 'September 1, 2023 00:00:00',
+    const launchDate = 'September 5, 2023 00:00:00',
     startDate = 'May 8, 2023 12:44:41',
     refixItems = ['computer', 'laptop', 'printer', 'cctv', 'cpu', 'ups', 'vdu'];
 
@@ -89,7 +89,7 @@
 
             if (days <= 99) {
                 if (days <= 9) {
-                    days = '00' + days;
+                    days = '0' + days;
                 } else {
                     days = '0' + days;
                 };
