@@ -24,16 +24,16 @@ html {
 }
 
 body {
-  background: #1c3239;
+  background: #011d25;
   color: rgb(67, 208, 243);
   overflow-x: hidden;
 }
 
 p {
   font-family: "Rajdhani Regular", sans-serif;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   text-align: justify;
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
 }
 
 button {
@@ -144,10 +144,9 @@ header .background {
   left: 0;
 }
 header .background video {
-  -o-object-fit: cover;
-     object-fit: cover;
   mix-blend-mode: screen;
   opacity: 0.1;
+  width: 100vw;
 }
 header .background .background-logo {
   position: absolute;
@@ -275,7 +274,7 @@ header .foreground .headerElements .vSeperator {
   margin: 0 2vw;
   height: 90%;
   width: 1px;
-  background: #2c6372;
+  background: #145466;
 }
 header .foreground .headerElements .buttons {
   display: flex;
@@ -302,12 +301,12 @@ header .foreground .headerElements .buttons .btn-secondary {
   margin-top: 100vh;
   width: 100%;
   height: 200px;
-  background: linear-gradient(to top, #1c3239, transparent);
+  background: linear-gradient(to top, #011d25, transparent);
 }
 
 main {
   position: relative;
-  background: #1c3239;
+  background: #011d25;
   padding: 200px 10vw;
 }
 main .section-heading {
@@ -318,17 +317,100 @@ main #services .section-body {
 }
 main #services .section-body .boxes {
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
+  align-items: flex-start;
   flex-wrap: wrap;
-  gap: 2vw;
+  gap: 4vw 3vw;
 }
 main #services .section-body .boxes .box {
-  border: 1px solid white;
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background: rgba(131, 220, 246, 0.05);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 20px 0;
 }
-main #services .section-body .boxes .box img {
-  width: 20rem;
+main #services .section-body .boxes .box * {
+  transition: all 0.5s;
+}
+main #services .section-body .boxes .box::after {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  height: 10px;
+  width: 10px;
+  background: #ff048a;
+}
+main #services .section-body .boxes .box .header {
+  position: relative;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px 0;
+  text-align: center;
+}
+main #services .section-body .boxes .box .header svg {
+  fill: white;
+  width: 80px;
+  height: auto;
+}
+main #services .section-body .boxes .box .header h5 {
+  font-family: "Rajdhani Regular", sans-serif;
+  font-size: 2.5rem;
+}
+main #services .section-body .boxes .box .header h6 {
+  font-family: "Rajdhani Light", sans-serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #145466;
+  line-height: 0;
+}
+main #services .section-body .boxes .box .body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 10px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  opacity: 0;
+}
+main #services .section-body .boxes .box .body p {
+  color: #3997b0;
+}
+main #services .section-body .boxes .box .body button {
+  padding-right: 0;
+}
+main #services .section-body .boxes .box:hover {
+  background: rgba(131, 220, 246, 0.02);
+}
+main #services .section-body .boxes .box:hover .header {
+  top: -45%;
+  gap: 0;
+}
+main #services .section-body .boxes .box:hover .header svg {
+  fill: #43d0f3;
+  width: 50px;
+  height: auto;
+}
+main #services .section-body .boxes .box:hover .header h5 {
+  font-size: 2rem;
+  color: #d9f4fc;
+}
+main #services .section-body .boxes .box:hover .header h6 {
+  opacity: 0;
+}
+main #services .section-body .boxes .box:hover .body {
+  opacity: 1;
+  height: 100%;
 }/*# sourceMappingURL=styles_main.css.map */

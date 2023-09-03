@@ -2,9 +2,9 @@
 
 @mixin text-para {
     font-family: 'Rajdhani Regular', sans-serif;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     text-align: justify;
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
 }
 
 @mixin text-tiny-regular {
@@ -19,10 +19,10 @@
     text-transform: uppercase;
 }
 
-@mixin text-larger-regular {
+@mixin text-larger-regular($size: 8vw) {
     font-family: 'Rajdhani Regular', sans-serif;
     // font-size: 28rem;
-    font-size: 8vw;
+    font-size: $size;
 }
 
 @mixin text-bold-upper-head {
@@ -42,9 +42,12 @@
     font-size: 7rem;
 }
 
-@mixin text-italic($size) {
-    font-family: 'Rajdhani Regular', sans-serif;
+@mixin text-italic($size: 1.2rem) {
+    font-family: 'Rajdhani Light', sans-serif;
     font-size: $size;
+    font-style: italic;
+    color: $color-primary-darker;
+    line-height: 0;
 }
 
 

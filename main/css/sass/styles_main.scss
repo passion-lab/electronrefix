@@ -19,9 +19,10 @@ header {
         @include absolute-fixed-cover(fixed);
 
         video {
-            object-fit: cover;
+            // object-fit: cover;
             mix-blend-mode: screen;
             opacity: 0.1;
+            width: 100vw;
             // filter: hue-rotate(0deg);
         }
 
@@ -170,19 +171,122 @@ main {
     #services {
         .section-body {
             position: relative;
+
             .boxes {
-                @include flex-center;
+                // @include flex-center;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
                 flex-wrap: wrap;
-                gap: 2vw;
+                gap: 4vw 3vw;
+
                 .box {
-                    border: 1px solid white;
+                    position: relative;
+                    width: 300px;
+                    height: 200px;
+                    
+                    // width: 200px;
+                    // border: 1px solid white;
+                    background: $color-background-light;
                     @include flex-center;
-                    img {
-                        width: 20rem;
+                    flex-direction: column;
+                    // flex: 1;
+                    // flex-basis: 3;
+                    flex-grow: 1;
+                    gap: 20px 0;
+
+                    * {
+                        transition: all .5s;
                     }
+
+                    &::after {
+                        position: absolute;
+                        top: -10px;
+                        left: 50%;
+                        height: 10px;
+                        width: 10px;
+                        background: #ff048a;
+                        // filter: blur(10px);
+                    }
+                    
+                    .header {
+                        position: relative;
+                        top: 0;
+                        @include flex-center;
+                        flex-direction: column;
+                        gap: 10px 0;
+                        text-align: center;
+
+                        svg {
+                            fill: white;
+                            width: 80px;
+                            height: auto;
+                        }
+
+                        h5 {
+                            @include text-larger-regular(2.5rem);
+                        }
+
+                        h6 {
+                            @include text-italic;
+                        }
+                    }
+
+                    .body {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                        padding: 10px 30px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-end;
+                        justify-content: flex-end;
+                        opacity: 0;
+
+                        p {
+                            color: $color-primary-dark;
+                        }
+
+                        button {
+                            padding-right: 0;
+                        }
+                    }
+
+                    &:hover {
+                        background: $color-background-lighter;
+                        
+                        .header {
+                            top: -45%;
+                            gap: 0;
+
+                            svg {
+                                fill: $color-primary;
+                                width: 50px;
+                                height: auto;
+                            }
+
+                            h5 {
+                                font-size: 2rem;
+                                color: $color-primary-lightest;
+                            }
+
+                            h6 {
+                                opacity: 0;
+                            }
+                        }
+
+                        .body {
+                            // top: 10%;
+                            opacity: 1;
+                            height: 100%;
+                        }
+                    }
+
                 }
             }
         }
     }
-
 }
