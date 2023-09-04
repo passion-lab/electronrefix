@@ -200,14 +200,28 @@ main {
                         transition: all .5s;
                     }
 
-                    &::after {
+                    
+
+                    .back-glow {
                         position: absolute;
-                        top: -10px;
-                        left: 50%;
-                        height: 10px;
-                        width: 10px;
-                        background: #ff048a;
-                        // filter: blur(10px);
+                        left: 0;
+                        top: 0;
+                        height: 100%;
+                        width: 100%;
+                        background: radial-gradient(40% 45% at 50% 0%, rgba(0, 183, 255, .3) -20%, rgba(255, 255, 255, 0) 100%);
+                        opacity: 0;
+                        overflow: hidden;
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: -25px;
+                            height: 100%;
+                            width: 0%;
+                            transform: skewX(15deg);
+                            background: linear-gradient(to right, transparent 60%, rgba(255, 255, 255, .02) 10%);
+                        }
                     }
                     
                     .header {
@@ -257,6 +271,14 @@ main {
 
                     &:hover {
                         background: $color-background-lighter;
+
+                        .back-glow {
+                            opacity: 1;
+
+                            &::before {
+                                width: 50%;
+                            }
+                        }
                         
                         .header {
                             top: -45%;
@@ -279,11 +301,11 @@ main {
                         }
 
                         .body {
-                            // top: 10%;
                             opacity: 1;
                             height: 100%;
                         }
                     }
+                    
 
                 }
             }

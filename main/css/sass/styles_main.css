@@ -338,13 +338,25 @@ main #services .section-body .boxes .box {
 main #services .section-body .boxes .box * {
   transition: all 0.5s;
 }
-main #services .section-body .boxes .box::after {
+main #services .section-body .boxes .box .back-glow {
   position: absolute;
-  top: -10px;
-  left: 50%;
-  height: 10px;
-  width: 10px;
-  background: #ff048a;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(40% 45% at 50% 0%, rgba(0, 183, 255, 0.3) -20%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0;
+  overflow: hidden;
+}
+main #services .section-body .boxes .box .back-glow::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -25px;
+  height: 100%;
+  width: 0%;
+  transform: skewX(15deg);
+  background: linear-gradient(to right, transparent 60%, rgba(255, 255, 255, 0.02) 10%);
 }
 main #services .section-body .boxes .box .header {
   position: relative;
@@ -392,7 +404,13 @@ main #services .section-body .boxes .box .body button {
   padding-right: 0;
 }
 main #services .section-body .boxes .box:hover {
-  background: rgba(131, 220, 246, 0.02);
+  background: rgba(131, 220, 246, 0.0196078431);
+}
+main #services .section-body .boxes .box:hover .back-glow {
+  opacity: 1;
+}
+main #services .section-body .boxes .box:hover .back-glow::before {
+  width: 50%;
 }
 main #services .section-body .boxes .box:hover .header {
   top: -45%;
