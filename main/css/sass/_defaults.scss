@@ -44,6 +44,14 @@ p {
     @include text-para;
 }
 
+h5 {
+    @include text-larger-regular(2.5rem);
+}
+
+h6 {
+    @include text-italic;
+}
+
 button {
     position: relative;
     margin: 5px 0;
@@ -58,6 +66,21 @@ input:active {
     border-style: none;
     background: none;
     outline: none;
+}
+
+a,
+a:active,
+a:focus,
+a:visited,
+button,
+button:active,
+button:focus,
+button:visited {
+    color: inherit;
+    border-style: none;
+    text-decoration: none;
+    outline: none;
+
 }
 
 a, 

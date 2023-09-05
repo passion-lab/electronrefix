@@ -32,18 +32,10 @@ header {
             filter: invert(1);
 
             &:nth-child(1) {
-                @include wh_tlbr($w: 50px, $h: 50px, $t: 8vh, $l: 4vw);
-            }
-
-            &:nth-child(2) {
                 @include wh_tlbr($w: 170px, $h: 170px, $t: 20vh, $r: 30vw);
             }
 
-            &:nth-child(3) {
-                @include wh_tlbr($w: 40px, $h: 40px, $b: 20vh, $r: 200px);
-            }
-
-            &:nth-child(4) {
+            &:nth-child(2) {
                 @include wh_tlbr($w: 500px, $h: 500px, $b: -100px, $l: 8vw);
                 filter: invert(1) blur(10px);
             }
@@ -159,13 +151,31 @@ header {
 main {
     position: relative;
     background: $color-primary-darkest;
-    padding: 200px 10vw;
+    padding: 150px 10vw;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        height: 2px;
+        transform: translateX(-50%);
+        background: radial-gradient(rgba(255, 255, 255, .5), transparent 60%);
+    }
+
+    section {
+        margin-bottom: 100px;
+    }
 
     .section-heading {
+        margin-top: 50px;
+        margin-bottom: 30px;
         text-align: right;
     }
 
     #who {
+        margin-top: 50px;
     }
 
     #services {
@@ -185,9 +195,6 @@ main {
                     position: relative;
                     width: 300px;
                     height: 200px;
-                    
-                    // width: 200px;
-                    // border: 1px solid white;
                     background: $color-background-light;
                     @include flex-center;
                     flex-direction: column;
@@ -199,8 +206,6 @@ main {
                     * {
                         transition: all .5s;
                     }
-
-                    
 
                     .back-glow {
                         position: absolute;
@@ -223,7 +228,7 @@ main {
                             background: linear-gradient(to right, transparent 60%, rgba(255, 255, 255, .02) 10%);
                         }
                     }
-                    
+
                     .header {
                         position: relative;
                         top: 0;
@@ -236,14 +241,6 @@ main {
                             fill: white;
                             width: 80px;
                             height: auto;
-                        }
-
-                        h5 {
-                            @include text-larger-regular(2.5rem);
-                        }
-
-                        h6 {
-                            @include text-italic;
                         }
                     }
 
@@ -279,7 +276,7 @@ main {
                                 width: 50%;
                             }
                         }
-                        
+
                         .header {
                             top: -45%;
                             gap: 0;
@@ -305,10 +302,89 @@ main {
                             height: 100%;
                         }
                     }
-                    
+
 
                 }
             }
         }
     }
+
+    #testimonials {
+        .section-body {
+            position: relative;
+            // margin-top: 150px;
+
+            .boxes {
+                position: relative;
+                height: 500px;
+                @include flex-center;
+                flex-direction: column;
+                // perspective: 2000px;
+                transform-style: preserve-3d;
+
+                .box {
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    overflow: hidden;
+                    height: 150px;
+                    width: 350px;
+                    padding: 10px 20px;
+                    transform: rotateX(43deg) rotateY(-8deg) skew(320deg, 30deg);
+                    background: $color-primary-lightest;
+                    background: radial-gradient(circle farthest-corner at 0 0, $color-primary-lightest, $color-primary-lighter);
+                    box-shadow: 2px 2px 10px rgb(68, 68, 68);
+                    transition: all .5s ease-out;
+
+                    @for $i from 1 through 4 {
+                        &:nth-child(#{$i}) {
+                            top: 70px * $i;
+                            z-index: 10 - $i;
+                        }
+                    }
+
+                    &:hover {
+                        transform: translateX(-93px) translateY(63px) rotateX(35deg) rotateY(345deg) skew(331deg, 26deg);
+                        background: radial-gradient(circle farthest-corner at 100% 100%, $color-primary-lightest, $color-primary-lighter);
+                        box-shadow: 8px 0px 30px rgb(68, 68, 68);
+                    }
+
+                    svg {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 80px;
+                        width: auto;
+                        fill: $color-primary-darkest;
+                        opacity: .1;
+                        z-index: -1;
+                    }
+
+                    p {
+                        font-size: 1.3rem;
+                        color: $color-primary-darkest;
+                    }
+                    
+                    h5 {
+                        font-size: 2rem;
+                        color: $color-primary-darker;
+
+                        span {
+                            background: $color-primary-darker;
+                            color: $color-primary-light;
+                            font-size: 1.1rem;
+                        }
+                    }
+                }
+            }
+
+            h6 {
+                padding-top: 10px;
+                text-transform: uppercase;
+            }
+
+        }
+    }
+    
 }

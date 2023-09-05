@@ -31,6 +31,15 @@
     text-transform: uppercase;
 }
 
+@mixin text-italic($size: 1.2rem) {
+    font-family: 'Rajdhani Light', sans-serif;
+    font-size: $size;
+    font-style: italic;
+    color: $color-primary-darker;
+    line-height: 0;
+}
+
+
 @mixin text-section-back {
     font-family: 'Rajdhani Bold', sans-serif;
     font-size: 16rem;
@@ -41,15 +50,6 @@
     font-family: 'Rajdhani Regular', sans-serif;
     font-size: 7rem;
 }
-
-@mixin text-italic($size: 1.2rem) {
-    font-family: 'Rajdhani Light', sans-serif;
-    font-size: $size;
-    font-style: italic;
-    color: $color-primary-darker;
-    line-height: 0;
-}
-
 
 
 @mixin text-btn-primary {
