@@ -73,9 +73,10 @@
             const now = new Date().getTime();
             let timeDiff = finalDate - now;
             let timeRange = finalDate - initialDate;
-            let timePercent = 100 - (timeDiff / timeRange * 100)
-
+            let timePercent = 100 - (timeDiff / timeRange * 100);
+            
             if (timeDiff <= 0) {
+                progressElement.style.setProperty('--progress-width', timePercent + '%');
                 if (timeInterval) {
                     clearInterval(timeInterval);
                 };
