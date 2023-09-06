@@ -77,6 +77,8 @@
             
             if (timeDiff <= 0) {
                 progressElement.style.setProperty('--progress-width', timePercent + '%');
+                document.getElementById('tooltip').style.display = 'block';
+
                 if (timeInterval) {
                     clearInterval(timeInterval);
                 };

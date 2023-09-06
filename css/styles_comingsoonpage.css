@@ -286,6 +286,41 @@ main .main-content-area .text-content {
     cursor: pointer;
 }
 
+/* Tooltip ______________ */
+
+.text-content .left-section #tooltip {
+    position: relative;
+    margin-bottom: 20px;
+    width: fit-content;
+    padding: 2px 10px;
+    font-size: small;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    opacity: 0;
+    animation: blink 3s linear 5s infinite alternate-reverse;
+    display: none;
+}
+
+#tooltip::before {
+    content: "";
+    position: absolute;
+    right: 30px;
+    bottom: -10px;
+    height: 10px;
+    width: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+}
+
+@keyframes blink {
+    5%,70% {
+        opacity: 0;
+    }
+    75%,80%,100% {
+        opacity: 1;
+    }
+}
+
 /* Logo and Texts ______________ */
 
 .text-content .left-section #logo {
