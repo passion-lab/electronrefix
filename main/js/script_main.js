@@ -1,5 +1,28 @@
+// CLASSES:
+// show
+// hide
+
+
+// Modal
+// ---------------------------
+
+body = document.querySelector('body');
+modal = document.getElementById('modal');
+btn = document.getElementById('modal-btn');
+
+window.addEventListener('load', () => {
+    modal.classList.add("show");
+    body.style.overflow = 'hidden';
+});
+
+btn.addEventListener('click', () => {
+    modal.classList.replace('show', 'hide');
+    body.style.overflow = 'initial';
+})
+
 
 // Banner
+// ---------------------------
 
 bannerImgsPath = "./main/assets/img/banner/";
 bannerImgs = [
