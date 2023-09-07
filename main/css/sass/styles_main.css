@@ -292,6 +292,32 @@ input {
   animation: modal-win 0.5s linear 0s 1 reverse forwards;
 }
 
+nav {
+  position: fixed;
+  top: 47px;
+  left: 8px;
+  z-index: 1;
+}
+nav .nav-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px 0;
+}
+nav .nav-bar img {
+  width: 80px;
+  height: 80px;
+}
+nav .nav-bar h5 {
+  text-transform: uppercase;
+  font-size: medium;
+  transform: rotate(-90deg);
+  padding: 2px 5px;
+  border: 1px solid white;
+}
+
 header {
   position: relative;
 }
