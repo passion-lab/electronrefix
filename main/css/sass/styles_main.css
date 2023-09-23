@@ -49,6 +49,10 @@ h6 {
   line-height: 0;
 }
 
+ul {
+  list-style: none;
+}
+
 button {
   position: relative;
   margin: 5px 0;
@@ -301,21 +305,43 @@ nav {
 nav .nav-bar {
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  gap: 50px 0;
+  align-items: flex-start;
 }
 nav .nav-bar img {
   width: 80px;
   height: 80px;
+  border: 1px solid red;
 }
-nav .nav-bar h5 {
+nav .nav-bar .nav-box h5 {
   text-transform: uppercase;
   font-size: medium;
-  transform: rotate(-90deg);
-  padding: 2px 5px;
+  letter-spacing: 10px;
+  padding: 4px 8px;
+  margin-top: 20px;
   border: 1px solid white;
+}
+nav .nav-bar .nav-box .menus {
+  margin-top: 10px;
+}
+nav .nav-bar .nav-box .menus ul li {
+  padding: 5px 25px;
+}
+nav .nav-bar .nav-box .menus ul li a {
+  font-family: "Rajdhani Regular", sans-serif;
+  font-size: 1.5rem;
+  text-align: justify;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+nav .nav-bar .nav-box .menus ul li a svg {
+  fill: white;
+  margin-right: 15px;
+}
+nav .nav-bar .nav-box .menus ul li:hover {
+  background: #222;
 }
 
 header {

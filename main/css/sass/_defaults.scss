@@ -52,6 +52,10 @@ h6 {
     @include text-italic;
 }
 
+ul {
+    list-style: none;
+}
+
 button {
     position: relative;
     margin: 5px 0;
