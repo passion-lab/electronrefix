@@ -98,6 +98,7 @@ input {
 
 // CLASSES
 
+
 .btn-primary {
     position: relative;
     @include text-btn-primary;
@@ -105,6 +106,8 @@ input {
     color: $color-primary-lightest;
     letter-spacing: .3vw;
     transition: .5s;
+    background-image: linear-gradient(to right, $color-btn-primary-dark 10%, $color-btn-primary-light 50%, $color-btn-primary-dark 90%);
+    background-size: 200% auto;
 
     &::after {
         content: '';
@@ -120,6 +123,7 @@ input {
 
     &:hover {
         letter-spacing: .5vw;
+        background-position: right center;
 
         &::after {
             right: 5px;
