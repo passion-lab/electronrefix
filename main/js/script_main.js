@@ -1,6 +1,7 @@
 // CLASSES:
 // show
 // hide
+// hovered
 
 
 // Modal
@@ -18,13 +19,22 @@ window.addEventListener('load', () => {
 btn.addEventListener('click', () => {
     modal.classList.replace('show', 'hide');
     body.style.overflow = 'initial';
-})
+});
+
+
+// Navigation
+// ---------------------------
+
+// let menu = document.querySelectorAll('nav ul li a');
+// menu.forEach(elem => {
+//     elem.addEventListener('mouseover', () => {elem.classList.add("hovered")});
+//     elem.addEventListener('mouseout', () => {elem.classList.remove("hovered")});
+// });
 
 
 // Banner
 // ---------------------------
 
-bannerImgsPath = "./main/assets/img/banner/";
 bannerImgs = [
     "motherboard_1.png",
     "motherboard_2.png",
@@ -38,6 +48,6 @@ bannerImgs = [
 let num = 0;
 setInterval(() => {
     num == bannerImgs.length ? num = 0 : null;
-    document.getElementById('headerImg').setAttribute('src', bannerImgsPath + bannerImgs[num]);
+    document.getElementById('headerImg').setAttribute('src', "./main/assets/img/banner/" + bannerImgs[num]);
     num++;
 }, 3000);
