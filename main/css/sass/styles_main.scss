@@ -134,7 +134,7 @@ nav {
     left: 30px;
     z-index: 1;
 
-    .nav-bar {
+    #nav-bar {
         position: relative;
         display: flex;
         flex-direction: column;
@@ -142,8 +142,8 @@ nav {
 
         .trigger {
             position: relative;
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
 
             img {
                 width: 100%;
@@ -167,8 +167,9 @@ nav {
 
             &:hover {
                 img.logo-e {
-                    scale: .7;
-                    filter: hue-rotate(90deg);
+                    scale: .8;
+                    filter: invert(52%) sepia(75%) saturate(503%) hue-rotate(81deg) brightness(95%) contrast(81%);
+                    // Cradit goes to https://codepen.io/sosuke/pen/Pjoqqp
                 }
                 img.logo-spin {
                     scale: 1;
