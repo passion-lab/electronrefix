@@ -131,7 +131,7 @@
 nav {
     position: fixed;
     top: 47px;
-    left: 8px;
+    left: 30px;
     z-index: 1;
 
     .nav-bar {
@@ -140,13 +140,42 @@ nav {
         flex-direction: column;
         align-items: flex-start;
 
-        img {
+        .trigger {
+            position: relative;
             width: 80px;
             height: 80px;
-        }
 
-        img[alt=logo_spine] {
-            position: absolute;
+            img {
+                width: 100%;
+                height: 100%;
+                transition: all 1s ease-in;
+            }
+            
+            img.logo-e {
+                position: relative;
+                transition-timing-function: ease-out;
+            }
+    
+            img.logo-spin {
+                position: absolute;
+                top: 0;
+                left: 0;
+                scale: .7;
+                rotate: -90deg;
+                opacity: 0;
+            }
+
+            &:hover {
+                img.logo-e {
+                    scale: .7;
+                    filter: hue-rotate(90deg);
+                }
+                img.logo-spin {
+                    scale: 1;
+                    rotate: 0deg;
+                    opacity: 1;
+                }
+            }
         }
 
         .nav-box {
@@ -154,11 +183,23 @@ nav {
             h5 {
                 text-transform: uppercase;
                 font-size: medium;
+                text-align: center;
                 letter-spacing: 10px;
                 padding: 4px 8px;
                 margin-top: 20px;
                 border: 1px dotted $color-primary-darker;
                 border-style: dashed;
+                transition: .5s;
+                color: $color-primary-lightest;
+                text-shadow: 0 0 5px $color-primary,
+                    0 0 10px $color-primary,
+                    0 0 25px $color-primary,
+                    0 0 35px $color-primary;
+                
+                &:hover {
+                    color: $color-primary;
+                    text-shadow: 0 0 15px $color-primary;
+                }
             }
 
             .menus {
@@ -385,7 +426,7 @@ header {
     margin-top: 100vh;
     width: 100%;
     height: 200px;
-    background: linear-gradient(to top, $color-primary-darkest, transparent);
+    background: linear-gradient(to top, $color-body-background, transparent);
 }
 
 
@@ -393,7 +434,7 @@ header {
 
 main {
     position: relative;
-    background: $color-primary-darkest;
+    background: $color-body-background;
     padding: 150px 10vw;
 
     &::before {

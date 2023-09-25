@@ -35,7 +35,7 @@ html {
 
 body {
     // width: 100%;
-    background: $color-primary-darkest;
+    background: $color-body-background;
     color: $color-pri;
     overflow-x: hidden;
 }
@@ -98,6 +98,11 @@ input {
 
 // CLASSES
 
+
+.cursor-link {
+    cursor: url("../../assets/cursor/cursor_link.png") 0 32,
+    url("../../assets/cursor/cursor_link.cur") 0 32, auto;
+}
 
 .btn-primary {
     position: relative;
