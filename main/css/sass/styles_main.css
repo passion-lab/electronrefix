@@ -738,7 +738,6 @@ main #services .section-body .boxes .box:hover .body {
   height: 100%;
 }
 main #statistic .boxes {
-  border: 1px solid saddlebrown;
   margin: 50px 0;
   display: flex;
   align-items: center;
@@ -785,15 +784,20 @@ main #statistic .boxes .box:hover {
 }
 main #statistic .boxes .box:hover .count {
   transform: translateY(40px) scaleY(1.5);
+  color: #b1e8f9;
 }
 main #statistic .boxes .box:hover .count-name {
   transform: translateY(20px);
 }
+main #statistic .boxes .box:hover .count-name span {
+  color: #d9f4fc;
+  text-shadow: 0 0 5px #43d0f3, 0 0 15px #43d0f3;
+}
 main #statistic .boxes:hover .box:nth-child(even) {
-  transform: translateY(30px);
+  transform: translateY(40px);
 }
 main #statistic .boxes:hover .box:nth-child(odd) {
-  transform: translateY(-30px);
+  transform: translateY(-40px);
 }
 main #testimonials .section-body {
   position: relative;

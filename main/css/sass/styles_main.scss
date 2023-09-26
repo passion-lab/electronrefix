@@ -601,7 +601,6 @@ main {
 
     #statistic {
         .boxes {
-            border: 1px solid saddlebrown;
             margin: 50px 0;
             @include flex-center;
             gap: 0 10px;
@@ -648,10 +647,16 @@ main {
 
                     .count {
                         transform: translateY(40px) scaleY(1.5);
+                        color: $color-primary-lighter;
                     }
                     
                     .count-name {
                         transform: translateY(20px);
+                        span {
+                            color: $color-primary-lightest;
+                            text-shadow: 0 0 5px $color-primary,
+                                0 0 15px $color-primary,;
+                        }
                     }
                 }
             }
@@ -659,10 +664,10 @@ main {
             &:hover {
                 .box {
                     &:nth-child(even) {
-                        transform: translateY(30px);
+                        transform: translateY(40px);
                     }
                     &:nth-child(odd) {
-                        transform: translateY(-30px);
+                        transform: translateY(-40px);
                     }
                 }
             }
