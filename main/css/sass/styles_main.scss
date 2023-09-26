@@ -148,40 +148,27 @@ nav {
             img {
                 width: 100%;
                 height: 100%;
-                transition: all 1s ease-in;
+                transition: all .5s;
             }
             
             img.logo-e {
                 position: relative;
-                transition-timing-function: ease-out;
             }
     
             img.logo-spin {
                 position: absolute;
                 top: 0;
                 left: 0;
-                scale: .7;
+                scale: .8;
                 rotate: -90deg;
                 opacity: 0;
-            }
-
-            &:hover {
-                img.logo-e {
-                    scale: .8;
-                    filter: invert(52%) sepia(75%) saturate(503%) hue-rotate(81deg) brightness(95%) contrast(81%);
-                    // Cradit goes to https://codepen.io/sosuke/pen/Pjoqqp
-                }
-                img.logo-spin {
-                    scale: 1;
-                    rotate: 0deg;
-                    opacity: 1;
-                }
             }
         }
 
         .nav-box {
+            display: none;
 
-            h5 {
+            .head {
                 text-transform: uppercase;
                 font-size: medium;
                 text-align: center;
@@ -196,11 +183,12 @@ nav {
                     0 0 10px $color-primary,
                     0 0 25px $color-primary,
                     0 0 35px $color-primary;
-                
+
                 &:hover {
                     color: $color-primary;
                     text-shadow: 0 0 15px $color-primary;
                 }
+
             }
 
             .menus {
@@ -294,6 +282,23 @@ nav {
                     }
                 }
 
+            }
+        }
+
+        &:hover {
+            .trigger {
+                img.logo-e {
+                    scale: .8;
+                    filter: invert(52%) sepia(75%) saturate(503%) hue-rotate(81deg) brightness(95%) contrast(81%);
+                }
+                img.logo-spin {
+                    scale: 1;
+                    rotate: 0deg;
+                    opacity: 1;
+                }
+            }
+            .nav-box {
+                display: block;
             }
         }
     }
