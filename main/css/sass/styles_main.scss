@@ -112,7 +112,7 @@
         animation: modal-load .5s ease-in 0s 1 forwards;
 
         .window {
-            animation: modal-win .5s ease .5s 1 forwards;
+            animation: modal-win-load .5s ease .5s 1 forwards;
         }
     }
 
@@ -120,7 +120,7 @@
         animation: modal-unload .5s ease-out .5s 1 forwards;
 
         .window {
-            animation: modal-win .5s linear 0s 1 reverse forwards;
+            animation: modal-win-unload .5s linear 0s 1 forwards;
         }
     }
 }
@@ -594,6 +594,76 @@ main {
                     }
 
 
+                }
+            }
+        }
+    }
+
+    #statistic {
+        .boxes {
+            border: 1px solid saddlebrown;
+            margin: 50px 0;
+            @include flex-center;
+            gap: 0 10px;
+            
+            * {
+                transition: all .5s;
+            }
+            
+            .box {
+                position: relative;
+                width: 100px;
+                height: 500px;
+                @include flex-center;
+                background: linear-gradient(to top, transparent, $color-primary-darkest, transparent);
+                background-size: auto 100%;
+                background-position: center center;
+                
+                .count {
+                    top: 0%;
+                    @include text-thin(7rem);
+                    transform: scaleY(1.5);
+                    color: $color-primary-darker;
+                }
+
+                .count-name {
+                    position: absolute;
+                    top: 0%;
+                    text-transform: uppercase;
+                    font-size: small;
+                    writing-mode: vertical-lr;
+                    text-orientation: upright;
+                }
+
+                &::before {
+                    position: absolute;
+
+                }
+
+                &:hover {
+                    width: 120px;
+                    background-size: auto 200%;
+                    background-position-y: bottom;
+                    margin: 0 25px;
+
+                    .count {
+                        transform: translateY(40px) scaleY(1.5);
+                    }
+                    
+                    .count-name {
+                        transform: translateY(20px);
+                    }
+                }
+            }
+
+            &:hover {
+                .box {
+                    &:nth-child(even) {
+                        transform: translateY(30px);
+                    }
+                    &:nth-child(odd) {
+                        transform: translateY(-30px);
+                    }
                 }
             }
         }

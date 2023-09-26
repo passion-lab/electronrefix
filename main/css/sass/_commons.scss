@@ -39,6 +39,11 @@
     line-height: 0;
 }
 
+@mixin text-thin($size: 1rem) {
+    font-family: 'Rajdhani Light', sans-serif;
+    font-size: $size;
+}
+
 
 @mixin text-section-back {
     font-family: 'Rajdhani Bold', sans-serif;

@@ -195,7 +195,7 @@ input {
     visibility: hidden;
   }
 }
-@keyframes modal-win {
+@keyframes modal-win-load {
   0% {
     opacity: 0;
     transform: translateY(50px);
@@ -203,6 +203,16 @@ input {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes modal-win-unload {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  99% {
+    opacity: 0;
+    transform: translateY(50px);
   }
 }
 #modal {
@@ -294,13 +304,13 @@ input {
   animation: modal-load 0.5s ease-in 0s 1 forwards;
 }
 #modal.show .window {
-  animation: modal-win 0.5s ease 0.5s 1 forwards;
+  animation: modal-win-load 0.5s ease 0.5s 1 forwards;
 }
 #modal.hide {
   animation: modal-unload 0.5s ease-out 0.5s 1 forwards;
 }
 #modal.hide .window {
-  animation: modal-win 0.5s linear 0s 1 reverse forwards;
+  animation: modal-win-unload 0.5s linear 0s 1 forwards;
 }
 
 nav {
@@ -726,6 +736,64 @@ main #services .section-body .boxes .box:hover .header h6 {
 main #services .section-body .boxes .box:hover .body {
   opacity: 1;
   height: 100%;
+}
+main #statistic .boxes {
+  border: 1px solid saddlebrown;
+  margin: 50px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 10px;
+}
+main #statistic .boxes * {
+  transition: all 0.5s;
+}
+main #statistic .boxes .box {
+  position: relative;
+  width: 100px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to top, transparent, #011d25, transparent);
+  background-size: auto 100%;
+  background-position: center center;
+}
+main #statistic .boxes .box .count {
+  top: 0%;
+  font-family: "Rajdhani Light", sans-serif;
+  font-size: 7rem;
+  transform: scaleY(1.5);
+  color: #145466;
+}
+main #statistic .boxes .box .count-name {
+  position: absolute;
+  top: 0%;
+  text-transform: uppercase;
+  font-size: small;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+}
+main #statistic .boxes .box::before {
+  position: absolute;
+}
+main #statistic .boxes .box:hover {
+  width: 120px;
+  background-size: auto 200%;
+  background-position-y: bottom;
+  margin: 0 25px;
+}
+main #statistic .boxes .box:hover .count {
+  transform: translateY(40px) scaleY(1.5);
+}
+main #statistic .boxes .box:hover .count-name {
+  transform: translateY(20px);
+}
+main #statistic .boxes:hover .box:nth-child(even) {
+  transform: translateY(30px);
+}
+main #statistic .boxes:hover .box:nth-child(odd) {
+  transform: translateY(-30px);
 }
 main #testimonials .section-body {
   position: relative;
