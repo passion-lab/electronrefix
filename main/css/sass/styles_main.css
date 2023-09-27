@@ -103,6 +103,7 @@ input {
   transition: 0.5s;
   background-image: linear-gradient(to right, #314755 10%, #26a0da 50%, #314755 90%);
   background-size: 200% auto;
+  overflow: hidden;
 }
 .btn-primary::after {
   content: "";
@@ -873,4 +874,70 @@ main #testimonials .section-body .boxes .box h5 span {
 main #testimonials .section-body h6 {
   padding-top: 10px;
   text-transform: uppercase;
+}
+main #process .section-body .steps {
+  position: relative;
+  margin: 100px 0;
+  width: auto;
+  height: auto;
+}
+main #process .section-body .steps .step-path {
+  position: absolute;
+  width: 0px;
+  left: 0;
+  top: -70px;
+  bottom: -70px;
+  -o-border-image: linear-gradient(to bottom, transparent, #3997b0, transparent) 1;
+     border-image: linear-gradient(to bottom, transparent, #3997b0, transparent) 1;
+  border-left-width: 3px;
+  border-left-style: dashed;
+}
+main #process .section-body .steps .step {
+  position: relative;
+  left: 50px;
+  margin-bottom: 30px;
+  min-width: 400px;
+  width: 60vw;
+  height: auto;
+  background: linear-gradient(to right, rgba(131, 220, 246, 0.05), transparent);
+}
+main #process .section-body .steps .step .right-content {
+  position: relative;
+  padding: 10px 25px;
+}
+main #process .section-body .steps .step .right-content p {
+  color: #5c7379;
+}
+main #process .section-body .steps .step .right-content button {
+  padding: 2px 15px;
+  font-size: 1.8rem;
+}
+main #process .section-body .steps .step .right-content button .btn-primary {
+  letter-spacing: normal;
+}
+main #process .section-body .steps .step .right-content button .btn-primary:hover {
+  letter-spacing: 2px;
+}
+main #process .section-body .steps .step .right-content button .btn-secondary {
+  padding-left: 0;
+  text-align: left;
+}
+main #process .section-body .steps .step .right-content .mark,
+main #process .section-body .steps .step .right-content .line {
+  position: absolute;
+  top: 50%;
+  left: -57px;
+  transform: translateY(-50%);
+}
+main #process .section-body .steps .step .right-content .mark {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #43d0f3;
+  z-index: 1;
+}
+main #process .section-body .steps .step .right-content .line {
+  width: 57px;
+  height: 0;
+  border-top: 1px dashed #145466;
 }/*# sourceMappingURL=styles_main.css.map */

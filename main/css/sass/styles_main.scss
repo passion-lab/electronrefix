@@ -752,4 +752,89 @@ main {
         }
     }
 
+    #process {
+        .section-body {
+            $line-box-dist: 50px;
+            $line-mark-size: 16px;
+
+            .steps {
+                position: relative;
+                margin: 100px 0;
+                width: auto;
+                height: auto;
+                
+                .step-path {
+                    position: absolute;
+                    width: 0px;
+                    // height: 100%;
+                    left: 0;
+                    top: -70px;
+                    bottom: -70px;
+                    border-image: linear-gradient(to bottom, transparent, $color-primary-dark, transparent) 1;
+                    border-left-width: 3px;
+                    border-left-style: dashed;
+                    // border-left-color: $color-primary-darker;
+                }
+                
+                .step {
+                    position: relative;
+                    left: $line-box-dist;
+                    margin-bottom: 30px;
+                    min-width: 400px;
+                    width: 60vw;
+                    height: auto;
+                    background: linear-gradient(to right, $color-background-light, transparent);
+                    
+                    .right-content {
+                        position: relative;
+                        padding: 10px 25px;
+
+                        p {
+                            color: $color-sub-text;
+                        }
+
+                        button {
+                            padding: 2px 15px;
+                            font-size: 1.8rem;
+                            
+                            .btn-primary {
+                                letter-spacing: normal;
+                                
+                                &:hover {
+                                    letter-spacing: 2px;
+                                }
+                            }
+
+                            .btn-secondary {
+                                padding-left: 0;
+                                text-align: left;
+                            }
+
+                        }
+
+                        .mark,
+                        .line {
+                            position: absolute;
+                            top: 50%;
+                            left: - $line-box-dist - $line-mark-size / 2 + 1;
+                            transform: translateY(-50%);
+                        }
+                        .mark {
+                            height: $line-mark-size;
+                            width: $line-mark-size;
+                            border-radius: 50%;
+                            background: $color-primary;
+                            z-index: 1;
+                        }
+                        .line {
+                            width: $line-box-dist + $line-mark-size /2 - 1;
+                            height: 0;
+                            border-top: 1px dashed $color-primary-darker;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }
