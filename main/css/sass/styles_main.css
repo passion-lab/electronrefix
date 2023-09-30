@@ -877,7 +877,7 @@ main #testimonials .section-body h6 {
 }
 main #process .section-body .steps {
   position: relative;
-  margin: 100px 0;
+  margin: 100px 30px;
   width: auto;
   height: auto;
 }
@@ -897,13 +897,42 @@ main #process .section-body .steps .step {
   left: 50px;
   margin-bottom: 30px;
   min-width: 400px;
-  width: 60vw;
+  width: 40vw;
   height: auto;
-  background: linear-gradient(to right, rgba(131, 220, 246, 0.05), transparent);
 }
 main #process .section-body .steps .step .right-content {
   position: relative;
   padding: 10px 25px;
+}
+main #process .section-body .steps .step .right-content h5 {
+  position: relative;
+}
+main #process .section-body .steps .step .right-content h5 .c-line,
+main #process .section-body .steps .step .right-content h5 img {
+  position: absolute;
+  top: 50%;
+  left: -75px;
+  transform: translateY(-50%);
+}
+main #process .section-body .steps .step .right-content h5 .c-line {
+  width: 50px;
+  height: 0;
+  border-top: 1px dashed #3997b0;
+}
+main #process .section-body .steps .step .right-content h5 .c-line::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: #d9f4fc;
+}
+main #process .section-body .steps .step .right-content h5 img {
+  width: 50px;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%) rotate(-20deg);
 }
 main #process .section-body .steps .step .right-content p {
   color: #5c7379;
@@ -922,22 +951,13 @@ main #process .section-body .steps .step .right-content button .btn-secondary {
   padding-left: 0;
   text-align: left;
 }
-main #process .section-body .steps .step .right-content .mark,
-main #process .section-body .steps .step .right-content .line {
+main #process .section-body .steps .step .left-content {
   position: absolute;
   top: 50%;
-  left: -57px;
+  left: 0;
   transform: translateY(-50%);
 }
-main #process .section-body .steps .step .right-content .mark {
-  height: 16px;
-  width: 16px;
-  border-radius: 50%;
-  background: #43d0f3;
-  z-index: 1;
-}
-main #process .section-body .steps .step .right-content .line {
-  width: 57px;
-  height: 0;
-  border-top: 1px dashed #145466;
+main #process .section-body .steps .step .left-content img {
+  width: 50px;
+  height: auto;
 }/*# sourceMappingURL=styles_main.css.map */

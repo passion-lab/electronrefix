@@ -755,18 +755,19 @@ main {
     #process {
         .section-body {
             $line-box-dist: 50px;
-            $line-mark-size: 16px;
-
+            $line-mark-size: 10px;
+            $even-box-factor: 5;
+            $box-padx: 25px;
+            
             .steps {
                 position: relative;
-                margin: 100px 0;
+                margin: 100px 30px;
                 width: auto;
                 height: auto;
                 
                 .step-path {
                     position: absolute;
                     width: 0px;
-                    // height: 100%;
                     left: 0;
                     top: -70px;
                     bottom: -70px;
@@ -781,13 +782,45 @@ main {
                     left: $line-box-dist;
                     margin-bottom: 30px;
                     min-width: 400px;
-                    width: 60vw;
+                    width: 40vw;
                     height: auto;
-                    background: linear-gradient(to right, $color-background-light, transparent);
+                    // background: linear-gradient(to right, $color-background-light, transparent);
                     
                     .right-content {
                         position: relative;
-                        padding: 10px 25px;
+                        padding: 10px $box-padx;
+                        
+                        h5 {
+                            position: relative;
+
+                            .c-line,
+                            img {
+                                position: absolute;
+                                top: 50%;
+                                left: - $line-box-dist - $box-padx;
+                                transform: translateY(-50%);
+                            }
+                            .c-line {
+                                width: $line-box-dist;
+                                height: 0;
+                                border-top: 1px dashed $color-primary-dark;
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    top: - $line-mark-size / 2;
+                                    right: - $line-mark-size;
+                                    height: $line-mark-size;
+                                    width: $line-mark-size;
+                                    border-radius: 50%;
+                                    background: $color-primary-lightest;
+                                }
+                            }
+                            img {
+                                width: 50px;
+                                height: auto;
+                                transform: translateX(-50%) translateY(-50%) rotate(-20deg);
+                            }
+                        }
 
                         p {
                             color: $color-sub-text;
@@ -811,25 +844,32 @@ main {
                             }
 
                         }
+                        
+                    }
 
-                        .mark,
-                        .line {
-                            position: absolute;
-                            top: 50%;
-                            left: - $line-box-dist - $line-mark-size / 2 + 1;
-                            transform: translateY(-50%);
-                        }
-                        .mark {
-                            height: $line-mark-size;
-                            width: $line-mark-size;
-                            border-radius: 50%;
-                            background: $color-primary;
-                            z-index: 1;
-                        }
-                        .line {
-                            width: $line-box-dist + $line-mark-size /2 - 1;
-                            height: 0;
-                            border-top: 1px dashed $color-primary-darker;
+                    &:nth-child(even) {
+                        $line-box-dist: $line-box-dist * 10;
+                        // left: $line-box-dist * $even-box-factor;
+                        // .right-content {
+                        //     .mark,
+                        //     .line {
+                        //         left: - ($line-box-dist * $even-box-factor) - $line-mark-size / 2 + 1;
+                        //     }
+                        //     .line {
+                        //         width: ($line-box-dist * $even-box-factor) + $line-mark-size /2 - 1;
+                        //     }
+                        // }
+                    }
+
+                    .left-content {
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+
+                        img {
+                            width: 50px;
+                            height: auto;
                         }
                     }
                 }
