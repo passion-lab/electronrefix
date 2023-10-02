@@ -895,31 +895,46 @@ main #process .section-body .steps .step-path {
 main #process .section-body .steps .step {
   position: relative;
   left: 50px;
-  margin-bottom: 30px;
   min-width: 400px;
   width: 40vw;
   height: auto;
 }
-main #process .section-body .steps .step .right-content {
+main #process .section-body .steps .step .content {
   position: relative;
   padding: 10px 25px;
 }
-main #process .section-body .steps .step .right-content h5 {
+main #process .section-body .steps .step .content svg {
+  position: relative;
+  top: 20px;
+}
+main #process .section-body .steps .step .content svg #step-num-gradient .color1 {
+  stop-color: #145466;
+  stop-opacity: 0.5;
+}
+main #process .section-body .steps .step .content svg #step-num-gradient .color2 {
+  stop-color: transparent;
+  stop-opacity: 0;
+}
+main #process .section-body .steps .step .content svg text {
+  fill: url(#step-num-gradient);
+  font: bold 10vw sans-serif;
+}
+main #process .section-body .steps .step .content h5 {
   position: relative;
 }
-main #process .section-body .steps .step .right-content h5 .c-line,
-main #process .section-body .steps .step .right-content h5 img {
+main #process .section-body .steps .step .content h5 .c-line,
+main #process .section-body .steps .step .content h5 img {
   position: absolute;
   top: 50%;
   left: -75px;
   transform: translateY(-50%);
 }
-main #process .section-body .steps .step .right-content h5 .c-line {
+main #process .section-body .steps .step .content h5 .c-line {
   width: 50px;
   height: 0;
   border-top: 1px dashed #3997b0;
 }
-main #process .section-body .steps .step .right-content h5 .c-line::before {
+main #process .section-body .steps .step .content h5 .c-line::before {
   content: "";
   position: absolute;
   top: -5px;
@@ -929,35 +944,37 @@ main #process .section-body .steps .step .right-content h5 .c-line::before {
   border-radius: 50%;
   background: #d9f4fc;
 }
-main #process .section-body .steps .step .right-content h5 img {
+main #process .section-body .steps .step .content h5 img {
   width: 50px;
   height: auto;
   transform: translateX(-50%) translateY(-50%) rotate(-20deg);
 }
-main #process .section-body .steps .step .right-content p {
+main #process .section-body .steps .step .content p {
   color: #5c7379;
 }
-main #process .section-body .steps .step .right-content button {
+main #process .section-body .steps .step .content button {
   padding: 2px 15px;
   font-size: 1.8rem;
 }
-main #process .section-body .steps .step .right-content button .btn-primary {
+main #process .section-body .steps .step .content button .btn-primary {
   letter-spacing: normal;
 }
-main #process .section-body .steps .step .right-content button .btn-primary:hover {
+main #process .section-body .steps .step .content button .btn-primary:hover {
   letter-spacing: 2px;
 }
-main #process .section-body .steps .step .right-content button .btn-secondary {
+main #process .section-body .steps .step .content button .btn-secondary {
   padding-left: 0;
   text-align: left;
 }
-main #process .section-body .steps .step .left-content {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-}
-main #process .section-body .steps .step .left-content img {
-  width: 50px;
-  height: auto;
+@media (orientation: landscape) {
+  main #process .section-body .steps .step:nth-child(odd) {
+    left: 250px;
+  }
+  main #process .section-body .steps .step:nth-child(odd) .content h5 img,
+  main #process .section-body .steps .step:nth-child(odd) .content h5 .c-line {
+    left: -275px;
+  }
+  main #process .section-body .steps .step:nth-child(odd) .content h5 .c-line {
+    width: 250px;
+  }
 }/*# sourceMappingURL=styles_main.css.map */

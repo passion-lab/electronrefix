@@ -780,15 +780,34 @@ main {
                 .step {
                     position: relative;
                     left: $line-box-dist;
-                    margin-bottom: 30px;
                     min-width: 400px;
                     width: 40vw;
                     height: auto;
-                    // background: linear-gradient(to right, $color-background-light, transparent);
                     
-                    .right-content {
+                    .content {
                         position: relative;
                         padding: 10px $box-padx;
+
+                        svg {
+                            position: relative;
+                            top: 20px;
+
+                            #step-num-gradient {
+                                .color1 {
+                                    stop-color: $color-primary-darker;
+                                    stop-opacity: .5;
+                                }
+                                .color2 {
+                                    stop-color: transparent;
+                                    stop-opacity: 0;
+                                }
+                            }
+
+                            text {
+                                fill: url(#step-num-gradient);
+                                font: bold 10vw sans-serif;
+                            }
+                        }
                         
                         h5 {
                             position: relative;
@@ -847,29 +866,22 @@ main {
                         
                     }
 
-                    &:nth-child(even) {
-                        $line-box-dist: $line-box-dist * 10;
-                        // left: $line-box-dist * $even-box-factor;
-                        // .right-content {
-                        //     .mark,
-                        //     .line {
-                        //         left: - ($line-box-dist * $even-box-factor) - $line-mark-size / 2 + 1;
-                        //     }
-                        //     .line {
-                        //         width: ($line-box-dist * $even-box-factor) + $line-mark-size /2 - 1;
-                        //     }
-                        // }
-                    }
-
-                    .left-content {
-                        position: absolute;
-                        top: 50%;
-                        left: 0;
-                        transform: translateY(-50%);
-
-                        img {
-                            width: 50px;
-                            height: auto;
+                    @media (orientation: landscape) {
+                        
+                        &:nth-child(odd) {
+                            left: $line-box-dist * $even-box-factor;
+    
+                            .content {
+                                h5 {
+                                    img,
+                                    .c-line {
+                                        left: - ($line-box-dist * $even-box-factor) - $box-padx;;
+                                    }
+                                    .c-line {
+                                        width: $line-box-dist * $even-box-factor;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
